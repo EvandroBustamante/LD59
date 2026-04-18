@@ -13,10 +13,13 @@ public class PlayerCharacter : MonoBehaviour
     public Transform groundCheck2;
     public LayerMask groundLayer;
     public Transform cameraTarget;
+    public CameraFollow cameraFollow;
 
     private bool canMove = true;
     private bool isGrounded = false;
     private float hangTimer;
+    private Chunk currentChunk;
+    private Transform respawnPoint;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -27,6 +30,8 @@ public class PlayerCharacter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         inputManager = GetComponent<InputManager>();
+
+        cameraFollow.followTarget = cameraTarget;
     }
 
     private void Update()
@@ -80,6 +85,31 @@ public class PlayerCharacter : MonoBehaviour
         if (inputManager.moveInput.x != 0)
         {
             cameraTarget.localPosition = new Vector3((cameraAheadAmount * inputManager.moveInput.x), cameraTarget.localPosition.y, cameraTarget.localPosition.z);
+        }
+    }
+
+    private void UpdateCurrentChunk(Chunk newChunk)
+    {
+        currentChunk = newChunk;
+        respawnPoint = newChunk.respawnPoint;
+        cameraFollow.chunkBounds = newChunk.chunkBound;
+    }
+
+    private void RespawnPlayer()
+    {
+        transform.position = respawnPoint.transform.position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Chunk"))
+        {
+            UpdateCurrentChunk(collision.GetComponent<Chunk>());
+        }
+
+        if (collision.CompareTag("Death"))
+        {
+            RespawnPlayer();
         }
     }
 }
