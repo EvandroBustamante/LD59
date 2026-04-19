@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 17e8a9f8bba45ac4aa885b5db254b060
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2515242352996677881
+    second: Character_IntroSpawn_0
+  - first:
+      213: -1047578104290113632
+    second: Character_IntroSpawn_1
+  - first:
+      213: 1796575131407293903
+    second: Character_IntroSpawn_2
+  - first:
+      213: -7496584581384153961
+    second: Character_IntroSpawn_3
+  - first:
+      213: 6346918583449989640
+    second: Character_IntroSpawn_4
+  - first:
+      213: -3704339329772818397
+    second: Character_IntroSpawn_5
+  - first:
+      213: 6102094686505568440
+    second: Character_IntroSpawn_6
+  - first:
+      213: -563854420787754102
+    second: Character_IntroSpawn_7
+  - first:
+      213: -3610073689276663190
+    second: Character_IntroSpawn_8
+  - first:
+      213: -6772318996233925745
+    second: Character_IntroSpawn_9
+  - first:
+      213: -1954245873308269191
+    second: Character_IntroSpawn_10
+  - first:
+      213: 6125379337555446396
+    second: Character_IntroSpawn_11
+  - first:
+      213: 3655058644320115364
+    second: Character_IntroSpawn_12
+  - first:
+      213: 6097609062383524641
+    second: Character_IntroSpawn_13
+  - first:
+      213: 7823189917819466790
+    second: Character_IntroSpawn_14
+  - first:
+      213: 7249490335287045141
+    second: Character_IntroSpawn_15
+  - first:
+      213: 6411473522027500828
+    second: Character_IntroSpawn_16
+  - first:
+      213: 9046157725841658050
+    second: Character_IntroSpawn_17
+  - first:
+      213: 819876974153586121
+    second: Character_IntroSpawn_18
+  - first:
+      213: 8190369613665349301
+    second: Character_IntroSpawn_19
+  - first:
+      213: 3445773675239553833
+    second: Character_IntroSpawn_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Character_IntroSpawn_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7078d910860181dd0800000000000000
+      internalID: -2515242352996677881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a78f43b3414671f0800000000000000
+      internalID: -1047578104290113632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd15d73097bee810800000000000000
+      internalID: 1796575131407293903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7945de5ba08c6f790800000000000000
+      internalID: -7496584581384153961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802bcd003d8c41850800000000000000
+      internalID: 6346918583449989640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320f169810b879cc0800000000000000
+      internalID: -3704339329772818397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b886fe79cefea450800000000000000
+      internalID: 6102094686505568440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_7
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b89e74469cc28f0800000000000000
+      internalID: -563854420787754102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a3ea94b1176edc0800000000000000
+      internalID: -3610073689276663190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8bc8d311c3e302a0800000000000000
+      internalID: -6772318996233925745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_10
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97500b57bbf11e4e0800000000000000
+      internalID: -1954245873308269191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_11
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a8289cd08b10550800000000000000
+      internalID: 6125379337555446396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_IntroSpawn_12
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aadbefb87069b230800000000000000
+      internalID: 3655058644320115364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e847abf125df67e428edd0a3baf7ba8f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":50.0,"y":35.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Character_IntroSpawn_0: -2515242352996677881
+      Character_IntroSpawn_1: -1047578104290113632
+      Character_IntroSpawn_10: -1954245873308269191
+      Character_IntroSpawn_11: 6125379337555446396
+      Character_IntroSpawn_12: 3655058644320115364
+      Character_IntroSpawn_2: 1796575131407293903
+      Character_IntroSpawn_3: -7496584581384153961
+      Character_IntroSpawn_4: 6346918583449989640
+      Character_IntroSpawn_5: -3704339329772818397
+      Character_IntroSpawn_6: 6102094686505568440
+      Character_IntroSpawn_7: -563854420787754102
+      Character_IntroSpawn_8: -3610073689276663190
+      Character_IntroSpawn_9: -6772318996233925745
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
