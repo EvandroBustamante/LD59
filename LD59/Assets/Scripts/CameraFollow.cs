@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour
         cameraHeight = 2 * GetComponent<Camera>().orthographicSize;
         cameraWidth = cameraHeight * GetComponent<Camera>().aspect;
 
-        chunkBounds.GetComponent<SpriteRenderer>().enabled = false;
+        //chunkBounds.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void FixedUpdate()
