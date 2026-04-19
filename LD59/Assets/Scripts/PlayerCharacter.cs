@@ -109,6 +109,7 @@ public class PlayerCharacter : MonoBehaviour
             dashReset = true;
 
             animator.SetBool("hitGround", true);
+            animator.SetBool("isDoubleJumping", false);
         }
         else
         {
@@ -130,7 +131,7 @@ public class PlayerCharacter : MonoBehaviour
                 instantiatedJumpVFX = true;
             }
         }
-        else if (!inputManager.isJumping && rb.linearVelocity.y > 0)
+        else if (!inputManager.isJumping && rb.linearVelocity.y > 0 && !isGrounded)
         {
             hasJumped = true;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
@@ -143,6 +144,8 @@ public class PlayerCharacter : MonoBehaviour
 
             GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
             Destroy(newParticle, 5f);
+
+            animator.SetBool("isDoubleJumping", true);
         }
 
         //Dash:
@@ -265,10 +268,15 @@ public class PlayerCharacter : MonoBehaviour
             dashDuration = weakDashDuration;
         }
 
+        animator.SetBool("isDashing", true);
+
         isDashing = true;
         dashReset = false;
 
         yield return new WaitForSeconds(dashDuration);
+
+        animator.SetBool("isDashing", false);
+
         isDashing = false;
         dashCooldownTimer = dashCooldown;
         rb.gravityScale = previousGravity;

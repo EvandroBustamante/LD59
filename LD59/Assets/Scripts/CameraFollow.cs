@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
         chunkBounds.GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         followTrasform = followTarget.position;
 
