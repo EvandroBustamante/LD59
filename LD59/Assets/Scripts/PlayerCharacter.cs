@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerCharacter : MonoBehaviour
     public float weakDashDuration = 0.1f;
     public float strongDashDuration = 0.2f;
     public float dashCooldown = 1f;
+    public float timeToDie = 3;
     [Tooltip("Grace period when the player can still jump after jumping off a cliff")] public float hangTime = 0.2f;
     public float cameraAheadAmount = 5f;
 
@@ -39,6 +41,9 @@ public class PlayerCharacter : MonoBehaviour
     private bool isDashing = false;
     private float dashCooldownTimer;
     private bool dashReset = false;
+
+    private bool inDeathTimer = false;
+    [HideInInspector] public float dieTimer = 0f;
 
     private Chunk currentChunk;
     private Transform respawnPoint;
@@ -151,16 +156,19 @@ public class PlayerCharacter : MonoBehaviour
                 canDoubleJump = false;
                 hasWeakDash = false;
                 hasStrongDash = false;
+                if(!inDeathTimer) StartCoroutine(NoSignalTimer());
                 break;
             case SignalType.WeakSignal:
                 canDoubleJump = false;
                 hasWeakDash = true;
                 hasStrongDash = false;
+                inDeathTimer = false;
                 break;
             case SignalType.StrongSignal:
                 canDoubleJump = true;
                 hasWeakDash = false;
                 hasStrongDash = true;
+                inDeathTimer = false;
                 break;
         }
     }
@@ -205,6 +213,27 @@ public class PlayerCharacter : MonoBehaviour
     private void RespawnPlayer()
     {
         transform.position = respawnPoint.transform.position;
+        dieTimer = timeToDie;
+        inDeathTimer = false;
+    }
+
+    private IEnumerator NoSignalTimer()
+    {
+        inDeathTimer = true;
+        dieTimer = timeToDie;
+
+        while (dieTimer > 0)
+        {
+            if(currentSignal != SignalType.NoSignal)
+            {
+                yield break;
+            }
+
+            dieTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        RespawnPlayer();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
