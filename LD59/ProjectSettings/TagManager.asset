@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Chunk
   - Death
+  - WeakSignal
+  - StrongSignal
   layers:
   - Default
   - TransparentFX

@@ -25,16 +25,17 @@ public class PlayerCharacter : MonoBehaviour
 
     private bool canMove = true;
     private bool isFacingRight = true;
+    [HideInInspector] public SignalType currentSignal = SignalType.NoSignal;
 
     private bool isGrounded = false;
-    public bool canDoubleJump = true;
+    private bool canDoubleJump = true;
     private float hangTimer;
     private bool hasJumped = false;
     private bool hasDoubleJumped = false;
     private float doubleJumpBufferTimer;
 
-    public bool hasWeakDash = false;
-    public bool hasStrongDash = false;
+    private bool hasWeakDash = false;
+    private bool hasStrongDash = false;
     private bool isDashing = false;
     private float dashCooldownTimer;
     private bool dashReset = false;
@@ -55,6 +56,11 @@ public class PlayerCharacter : MonoBehaviour
         cameraFollow.followTarget = cameraTarget;
     }
 
+    private void Update()
+    {
+        SignalLogic();
+    }
+
     private void FixedUpdate()
     {
         MovementLogic();
@@ -68,7 +74,7 @@ public class PlayerCharacter : MonoBehaviour
         rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
 
         //Check for ground:
-        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .1f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .02f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
 
         if (isGrounded)
         {
@@ -137,6 +143,28 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    private void SignalLogic()
+    {
+        switch (currentSignal)
+        {
+            case SignalType.NoSignal:
+                canDoubleJump = false;
+                hasWeakDash = false;
+                hasStrongDash = false;
+                break;
+            case SignalType.WeakSignal:
+                canDoubleJump = false;
+                hasWeakDash = true;
+                hasStrongDash = false;
+                break;
+            case SignalType.StrongSignal:
+                canDoubleJump = true;
+                hasWeakDash = false;
+                hasStrongDash = true;
+                break;
+        }
+    }
+
     private IEnumerator Dash()
     {
         float multiplier = 1;
@@ -186,9 +214,38 @@ public class PlayerCharacter : MonoBehaviour
             UpdateCurrentChunk(collision.GetComponent<Chunk>());
         }
 
+        if (collision.CompareTag("WeakSignal") && currentSignal == SignalType.NoSignal)
+        {
+            currentSignal = SignalType.WeakSignal;
+        }
+        else if(collision.CompareTag("StrongSignal") && currentSignal == SignalType.WeakSignal)
+        {
+            currentSignal = SignalType.StrongSignal;
+        }
+
         if (collision.CompareTag("Death"))
         {
             RespawnPlayer();
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("StrongSignal") && currentSignal == SignalType.StrongSignal)
+        {
+            currentSignal = SignalType.WeakSignal;
+        }
+        
+        if(collision.CompareTag("WeakSignal") && currentSignal == SignalType.WeakSignal)
+        {
+            currentSignal = SignalType.NoSignal;
+        }
+    }
+}
+
+public enum SignalType
+{
+    NoSignal,
+    WeakSignal,
+    StrongSignal
 }
