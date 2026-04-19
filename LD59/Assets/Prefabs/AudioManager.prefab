@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4789010677033340359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3989620472247939177}
+  - component: {fileID: 1238524439651968702}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3989620472247939177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789010677033340359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1238524439651968702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789010677033340359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334599b598a032c429e5aa6386cd0d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicMenu:
+    Guid:
+      Data1: -919124019
+      Data2: 1223317092
+      Data3: -673396602
+      Data4: 582154659
+    Path: event:/music/mus_gameplay_lp
+  musicTutorial:
+    Guid:
+      Data1: 2020646024
+      Data2: 1201167344
+      Data3: 363581090
+      Data4: -528124622
+    Path: event:/music/mus_tutorial_lp
+  computerAmbience:
+    Guid:
+      Data1: 1955133948
+      Data2: 1167070152
+      Data3: -1553671263
+      Data4: -1313168589
+    Path: event:/sfx/ambience/amb_computer_lp
+  steps:
+    Guid:
+      Data1: -516136008
+      Data2: 1155869405
+      Data3: 1678218159
+      Data4: -2116923676
+    Path: event:/sfx/main_char/sfx_char_steps
+  jump:
+    Guid:
+      Data1: -986674829
+      Data2: 1318229170
+      Data3: -1588015990
+      Data4: 332068909
+    Path: event:/sfx/main_char/sfx_char_jump
+  doubleJump:
+    Guid:
+      Data1: -254460663
+      Data2: 1189947436
+      Data3: 1822686345
+      Data4: -87640496
+    Path: event:/sfx/main_char/sfx_char_doublejump
+  dashStrong:
+    Guid:
+      Data1: 229541826
+      Data2: 1307728107
+      Data3: 1864129187
+      Data4: -1474385552
+    Path: event:/sfx/main_char/sfx_char_dash_strong
+  dashWeak:
+    Guid:
+      Data1: 1208155794
+      Data2: 1257692192
+      Data3: 1427728517
+      Data4: -481742255
+    Path: event:/sfx/main_char/sfx_char_dash_weak
+  spawn:
+    Guid:
+      Data1: -2079092459
+      Data2: 1191952228
+      Data3: 1552827062
+      Data4: -286201581
+    Path: event:/sfx/main_char/sfx_char_spawn
+  death:
+    Guid:
+      Data1: 462724132
+      Data2: 1074264304
+      Data3: -1504871774
+      Data4: 155880798
+    Path: event:/sfx/main_char/sfx_char_death
