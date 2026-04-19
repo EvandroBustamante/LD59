@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
@@ -5,6 +6,13 @@ public class PlayerCharacter : MonoBehaviour
     [Header("Player Attributes")]
     public float moveSpeed = 5f;
     public float jumpHeight = 5f;
+    public float doubleJumpHeight = 3f;
+    public float doubleJumpBuffer = 0.2f;
+    public float weakDashForce = 2f;
+    public float strongDashForce = 4f;
+    public float weakDashDuration = 0.1f;
+    public float strongDashDuration = 0.2f;
+    public float dashCooldown = 1f;
     [Tooltip("Grace period when the player can still jump after jumping off a cliff")] public float hangTime = 0.2f;
     public float cameraAheadAmount = 5f;
 
@@ -16,8 +24,21 @@ public class PlayerCharacter : MonoBehaviour
     public CameraFollow cameraFollow;
 
     private bool canMove = true;
+    private bool isFacingRight = true;
+
     private bool isGrounded = false;
+    public bool canDoubleJump = true;
     private float hangTimer;
+    private bool hasJumped = false;
+    private bool hasDoubleJumped = false;
+    private float doubleJumpBufferTimer;
+
+    public bool hasWeakDash = false;
+    public bool hasStrongDash = false;
+    private bool isDashing = false;
+    private float dashCooldownTimer;
+    private bool dashReset = false;
+
     private Chunk currentChunk;
     private Transform respawnPoint;
 
@@ -34,14 +55,14 @@ public class PlayerCharacter : MonoBehaviour
         cameraFollow.followTarget = cameraTarget;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MovementLogic();
     }
 
     private void MovementLogic()
     {
-        if (!canMove) return;
+        if (!canMove || isDashing) return;
 
         //Horizontal move:
         rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
@@ -52,20 +73,46 @@ public class PlayerCharacter : MonoBehaviour
         if (isGrounded)
         {
             hangTimer = hangTime;
+
+            hasJumped = false;
+            hasDoubleJumped = false;
+            doubleJumpBufferTimer = doubleJumpBuffer;
+
+            dashReset = true;
         }
         else
         {
             hangTimer -= Time.deltaTime;
+            doubleJumpBufferTimer -= Time.deltaTime;
         }
 
         //Jump:
-        if (inputManager.isJumping && hangTimer > 0)
+        if (inputManager.isJumping && hangTimer > 0 && !hasJumped)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
         }
         else if (!inputManager.isJumping && rb.linearVelocity.y > 0)
         {
+            hasJumped = true;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
+        }
+
+        if(!isGrounded && canDoubleJump && inputManager.isJumping && hasJumped && !hasDoubleJumped && doubleJumpBufferTimer < 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
+            hasDoubleJumped = true;
+        }
+
+        //Dash:
+        if (hasWeakDash || hasStrongDash)
+        {
+            if (inputManager.isDashing && dashCooldownTimer < 0 && !isDashing && dashReset)
+            {
+                StartCoroutine(Dash());
+            }
+
+            //cooldown:
+            dashCooldownTimer -= Time.deltaTime;
         }
 
         //Flip sprite:
@@ -74,10 +121,12 @@ public class PlayerCharacter : MonoBehaviour
             if (inputManager.moveInput.x > 0)
             {
                 sr.flipX = false;
+                isFacingRight = true;
             }
             else if (inputManager.moveInput.x < 0)
             {
                 sr.flipX = true;
+                isFacingRight = false;
             }
         }
 
@@ -86,6 +135,36 @@ public class PlayerCharacter : MonoBehaviour
         {
             cameraTarget.localPosition = new Vector3((cameraAheadAmount * inputManager.moveInput.x), cameraTarget.localPosition.y, cameraTarget.localPosition.z);
         }
+    }
+
+    private IEnumerator Dash()
+    {
+        float multiplier = 1;
+        if (!isFacingRight) multiplier = -1;
+
+        float previousGravity = rb.gravityScale;
+        rb.gravityScale = 0;
+
+        float dashDuration = 0;
+
+        if (hasStrongDash)
+        {
+            rb.linearVelocity = new Vector2(strongDashForce * multiplier, 0);
+            dashDuration = strongDashDuration;
+        }
+        else if (hasWeakDash)
+        {
+            rb.linearVelocity = new Vector2(weakDashForce * multiplier, 0);
+            dashDuration = weakDashDuration;
+        }
+
+        isDashing = true;
+        dashReset = false;
+
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
+        dashCooldownTimer = dashCooldown;
+        rb.gravityScale = previousGravity;
     }
 
     private void UpdateCurrentChunk(Chunk newChunk)

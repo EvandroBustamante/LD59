@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     [HideInInspector] public Vector2 moveInput;
-    [HideInInspector] public bool isJumping;
+    [HideInInspector] public bool isJumping = false;
+    [HideInInspector] public bool isDashing = false;
 
     PlayerInputs playerInputs;
 
@@ -14,6 +15,8 @@ public class InputManager : MonoBehaviour
         playerInputs.Player.Enable();
         playerInputs.Player.Jump.performed += OnJumpPerformed;
         playerInputs.Player.Jump.canceled += OnJumpCanceled;
+        playerInputs.Player.Dash.performed += OnDashPerformed;
+        playerInputs.Player.Dash.canceled += OnDashCanceled;
     }
 
     private void OnDestroy()
@@ -34,5 +37,15 @@ public class InputManager : MonoBehaviour
     void OnJumpCanceled(InputAction.CallbackContext context)
     {
         isJumping = false;
+    }
+
+    void OnDashPerformed(InputAction.CallbackContext context)
+    {
+        isDashing = true;
+    }
+
+    void OnDashCanceled(InputAction.CallbackContext context)
+    {
+        isDashing = false;
     }
 }

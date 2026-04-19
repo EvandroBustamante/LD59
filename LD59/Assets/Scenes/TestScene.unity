@@ -1549,6 +1549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   moveInput: {x: 0, y: 0}
   isJumping: 0
+  isDashing: 0
 --- !u!114 &1260197893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,6 +1564,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacter
   moveSpeed: 3
   jumpHeight: 3
+  doubleJumpHeight: 3
+  doubleJumpBuffer: 0.3
+  weakDashForce: 7
+  strongDashForce: 9
+  weakDashDuration: 0.1
+  strongDashDuration: 0.2
+  dashCooldown: 1
   hangTime: 0.1
   cameraAheadAmount: 0.7
   groundCheck1: {fileID: 1417571083}
@@ -1572,6 +1580,9 @@ MonoBehaviour:
     m_Bits: 64
   cameraTarget: {fileID: 1674791590}
   cameraFollow: {fileID: 519420034}
+  canDoubleJump: 1
+  hasWeakDash: 0
+  hasStrongDash: 1
 --- !u!1 &1299929782
 GameObject:
   m_ObjectHideFlags: 0
