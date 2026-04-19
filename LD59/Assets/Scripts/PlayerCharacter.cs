@@ -36,6 +36,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool hasDoubleJumped = false;
     private float doubleJumpBufferTimer;
     private bool instantiatedJumpVFX = false;
+    private bool animatingJump = false;
 
     private bool hasWeakDash = false;
     private bool hasStrongDash = false;
@@ -55,15 +56,21 @@ public class PlayerCharacter : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private InputManager inputManager;
+    private Animator animator;
 
     [Header("VFX")]
     public ParticleSystem jumpVFX;
+    public ParticleSystem runVFX;
+    public float runVFXinterval;
+
+    private float runVFXtimer;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         inputManager = GetComponent<InputManager>();
+        animator = GetComponent<Animator>();
 
         cameraFollow.followTarget = cameraTarget;
     }
@@ -72,6 +79,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         SignalLogic();
         InteractLogic();
+        RunVFXLogic();
     }
 
     private void FixedUpdate()
@@ -99,11 +107,15 @@ public class PlayerCharacter : MonoBehaviour
             instantiatedJumpVFX = false;
 
             dashReset = true;
+
+            animator.SetBool("hitGround", true);
         }
         else
         {
             hangTimer -= Time.deltaTime;
             doubleJumpBufferTimer -= Time.deltaTime;
+
+            animator.SetBool("hitGround", false);
         }
 
         //Jump:
@@ -145,9 +157,10 @@ public class PlayerCharacter : MonoBehaviour
             dashCooldownTimer -= Time.deltaTime;
         }
 
-        //Flip sprite:
+        //Flip sprite + animation:
         if (inputManager.moveInput.x != 0)
         {
+            animator.SetBool("isRunning", true);
             if (inputManager.moveInput.x > 0)
             {
                 sr.flipX = false;
@@ -158,6 +171,16 @@ public class PlayerCharacter : MonoBehaviour
                 sr.flipX = true;
                 isFacingRight = false;
             }
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        if (rb.linearVelocity.y != 0)
+        {
+            animator.SetFloat("jumpVel", rb.linearVelocity.y);
+            animatingJump = true;
         }
 
         //Move camera target:
@@ -200,6 +223,24 @@ public class PlayerCharacter : MonoBehaviour
             {
                 interactableRef.Interact();
             }
+        }
+    }
+
+    private void RunVFXLogic()
+    {
+        if(isGrounded && inputManager.moveInput.x != 0)
+        {
+            runVFXtimer -= Time.deltaTime;
+            if(runVFXtimer < 0)
+            {
+                GameObject newParticle = Instantiate(runVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
+                Destroy(newParticle, 2f);
+                runVFXtimer = runVFXinterval;
+            }
+        }
+        else
+        {
+            runVFXtimer = runVFXinterval;
         }
     }
 
