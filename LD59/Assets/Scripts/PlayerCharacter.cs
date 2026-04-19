@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerCharacter : MonoBehaviour
     public float weakDashDuration = 0.1f;
     public float strongDashDuration = 0.2f;
     public float dashCooldown = 1f;
+    public float timeToDie = 3;
     [Tooltip("Grace period when the player can still jump after jumping off a cliff")] public float hangTime = 0.2f;
     public float cameraAheadAmount = 5f;
 
@@ -33,6 +35,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool hasJumped = false;
     private bool hasDoubleJumped = false;
     private float doubleJumpBufferTimer;
+    private bool instantiatedJumpVFX = false;
 
     private bool hasWeakDash = false;
     private bool hasStrongDash = false;
@@ -40,12 +43,21 @@ public class PlayerCharacter : MonoBehaviour
     private float dashCooldownTimer;
     private bool dashReset = false;
 
+    private bool canInteract = false;
+    private BoostSignalInteractable interactableRef;
+
+    private bool inDeathTimer = false;
+    [HideInInspector] public float dieTimer = 0f;
+
     private Chunk currentChunk;
     private Transform respawnPoint;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private InputManager inputManager;
+
+    [Header("VFX")]
+    public ParticleSystem jumpVFX;
 
     private void Start()
     {
@@ -59,6 +71,7 @@ public class PlayerCharacter : MonoBehaviour
     private void Update()
     {
         SignalLogic();
+        InteractLogic();
     }
 
     private void FixedUpdate()
@@ -83,6 +96,7 @@ public class PlayerCharacter : MonoBehaviour
             hasJumped = false;
             hasDoubleJumped = false;
             doubleJumpBufferTimer = doubleJumpBuffer;
+            instantiatedJumpVFX = false;
 
             dashReset = true;
         }
@@ -96,6 +110,13 @@ public class PlayerCharacter : MonoBehaviour
         if (inputManager.isJumping && hangTimer > 0 && !hasJumped)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+
+            if (!instantiatedJumpVFX)
+            {
+                GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
+                Destroy(newParticle, 5f);
+                instantiatedJumpVFX = true;
+            }
         }
         else if (!inputManager.isJumping && rb.linearVelocity.y > 0)
         {
@@ -107,6 +128,9 @@ public class PlayerCharacter : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
             hasDoubleJumped = true;
+
+            GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
+            Destroy(newParticle, 5f);
         }
 
         //Dash:
@@ -151,17 +175,31 @@ public class PlayerCharacter : MonoBehaviour
                 canDoubleJump = false;
                 hasWeakDash = false;
                 hasStrongDash = false;
+                if(!inDeathTimer) StartCoroutine(NoSignalTimer());
                 break;
             case SignalType.WeakSignal:
                 canDoubleJump = false;
                 hasWeakDash = true;
                 hasStrongDash = false;
+                inDeathTimer = false;
                 break;
             case SignalType.StrongSignal:
                 canDoubleJump = true;
                 hasWeakDash = false;
                 hasStrongDash = true;
+                inDeathTimer = false;
                 break;
+        }
+    }
+
+    private void InteractLogic()
+    {
+        if(canInteract && interactableRef != null)
+        {
+            if (inputManager.isInteracting)
+            {
+                interactableRef.Interact();
+            }
         }
     }
 
@@ -205,6 +243,27 @@ public class PlayerCharacter : MonoBehaviour
     private void RespawnPlayer()
     {
         transform.position = respawnPoint.transform.position;
+        dieTimer = timeToDie;
+        inDeathTimer = false;
+    }
+
+    private IEnumerator NoSignalTimer()
+    {
+        inDeathTimer = true;
+        dieTimer = timeToDie;
+
+        while (dieTimer > 0)
+        {
+            if(currentSignal != SignalType.NoSignal)
+            {
+                yield break;
+            }
+
+            dieTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        RespawnPlayer();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -223,6 +282,12 @@ public class PlayerCharacter : MonoBehaviour
             currentSignal = SignalType.StrongSignal;
         }
 
+        if (collision.CompareTag("Interactable") && collision.GetComponent<BoostSignalInteractable>())
+        {
+            canInteract = true;
+            interactableRef = collision.GetComponent<BoostSignalInteractable>();
+        }
+
         if (collision.CompareTag("Death"))
         {
             RespawnPlayer();
@@ -239,6 +304,11 @@ public class PlayerCharacter : MonoBehaviour
         if(collision.CompareTag("WeakSignal") && currentSignal == SignalType.WeakSignal)
         {
             currentSignal = SignalType.NoSignal;
+        }
+
+        if (collision.CompareTag("Interactable"))
+        {
+            canInteract = false;
         }
     }
 }

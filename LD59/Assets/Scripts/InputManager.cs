@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public Vector2 moveInput;
     [HideInInspector] public bool isJumping = false;
     [HideInInspector] public bool isDashing = false;
+    [HideInInspector] public bool isInteracting = false;
 
     PlayerInputs playerInputs;
 
@@ -17,10 +18,18 @@ public class InputManager : MonoBehaviour
         playerInputs.Player.Jump.canceled += OnJumpCanceled;
         playerInputs.Player.Dash.performed += OnDashPerformed;
         playerInputs.Player.Dash.canceled += OnDashCanceled;
+        playerInputs.Player.Interact.performed += OnInteractPerformed;
+        playerInputs.Player.Interact.canceled += OnInteractCanceled;
     }
 
     private void OnDestroy()
     {
+        playerInputs.Player.Jump.performed -= OnJumpPerformed;
+        playerInputs.Player.Jump.canceled -= OnJumpCanceled;
+        playerInputs.Player.Dash.performed -= OnDashPerformed;
+        playerInputs.Player.Dash.canceled -= OnDashCanceled;
+        playerInputs.Player.Interact.performed -= OnInteractPerformed;
+        playerInputs.Player.Interact.canceled -= OnInteractCanceled;
         playerInputs.Player.Disable();
     }
 
@@ -47,5 +56,15 @@ public class InputManager : MonoBehaviour
     void OnDashCanceled(InputAction.CallbackContext context)
     {
         isDashing = false;
+    }
+
+    void OnInteractPerformed(InputAction.CallbackContext context)
+    {
+        isInteracting = true;
+    }
+
+    void OnInteractCanceled(InputAction.CallbackContext context)
+    {
+        isInteracting = false;
     }
 }

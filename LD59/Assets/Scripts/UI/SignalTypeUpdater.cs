@@ -17,7 +17,7 @@ public class SignalTypeUpdater : MonoBehaviour
         switch (player.currentSignal)
         {
             case SignalType.NoSignal:
-                myText.text = "NO SIGNAL";
+                myText.text = "NO SIGNAL! -> " + player.dieTimer;
                 myText.color = Color.red;
                 break;
             case SignalType.WeakSignal:

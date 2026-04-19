@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 6100eca7a654537418592ac1dd012bf0
+guid: ce15e584ada3eb24fbd3e164fb42adf2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5134559523624755036
-    second: Panels_0
+      213: -4622084048314292734
+    second: Button_OutPanel_0
   - first:
-      213: -4672196534843201658
-    second: Panels_1
+      213: 1116379120456537364
+    second: Button_OutPanel_1
   - first:
-      213: -8651609875184883351
-    second: Panels_2
+      213: -9179719208831328638
+    second: Button_OutPanel_2
   - first:
-      213: 2253760293180371077
-    second: Panels_3
+      213: 4794747373084811605
+    second: Button_OutPanel_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Panels_0
+      name: Button_OutPanel_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 48
-        height: 48
+        x: 0
+        y: 0
+        width: 94
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 16, y: 16, z: 16, w: 16}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5f90c3ceae914740800000000000000
-      internalID: 5134559523624755036
+      spriteID: 2062a320c0f0bdfb0800000000000000
+      internalID: -4622084048314292734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Panels_1
+      name: Button_OutPanel_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
-        width: 48
-        height: 48
+        x: 93
+        y: 0
+        width: 96
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 4, z: 34, w: 16}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6872cd38106092fb0800000000000000
-      internalID: -4672196534843201658
+      spriteID: 415997d25ec2e7f00800000000000000
+      internalID: 1116379120456537364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Panels_2
+      name: Button_OutPanel_2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 16
-        width: 48
-        height: 48
+        x: 188
+        y: 0
+        width: 94
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 4, z: 32, w: 16}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 969e75e18ae4fe780800000000000000
-      internalID: -8651609875184883351
+      spriteID: 28e57cb04061b9080800000000000000
+      internalID: -9179719208831328638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Panels_3
+      name: Button_OutPanel_3
       rect:
         serializedVersion: 2
-        x: 208
-        y: 16
-        width: 48
-        height: 48
+        x: 281
+        y: 0
+        width: 95
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 4, z: 32, w: 16}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58075e3bb07f64f10800000000000000
-      internalID: 2253760293180371077
+      spriteID: 5512578055d5a8240800000000000000
+      internalID: 4794747373084811605
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0f75b147e1c2d074cabe93415443818d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Panels_0: 5134559523624755036
-      Panels_1: -4672196534843201658
-      Panels_2: -8651609875184883351
-      Panels_3: 2253760293180371077
+      Button_OutPanel_0: -4622084048314292734
+      Button_OutPanel_1: 1116379120456537364
+      Button_OutPanel_2: -9179719208831328638
+      Button_OutPanel_3: 4794747373084811605
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
