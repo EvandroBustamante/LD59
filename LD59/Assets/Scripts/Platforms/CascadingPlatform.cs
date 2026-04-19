@@ -15,7 +15,7 @@ public class CascadingPlatform : Platform
 
     private void Awake()
     {
-        timer = timeAlive;
+        timer = timeDead;
     }
 
     private void Update()

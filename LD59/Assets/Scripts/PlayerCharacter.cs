@@ -21,6 +21,7 @@ public class PlayerCharacter : MonoBehaviour
     [Header("Script References")]
     public Transform groundCheck1;
     public Transform groundCheck2;
+    public Transform headCheck;
     public LayerMask groundLayer;
     public Transform cameraTarget;
     public CameraFollow cameraFollow;
@@ -79,6 +80,7 @@ public class PlayerCharacter : MonoBehaviour
         SignalLogic();
         InteractLogic();
         RunVFXLogic();
+        CheckIfSquished();
     }
 
     private void FixedUpdate()
@@ -311,6 +313,18 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         RespawnPlayer();
+    }
+
+    private void CheckIfSquished()
+    {
+        bool groundBelow = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
+        bool groundAbove = Physics2D.OverlapCircle(headCheck.position, .0025f, groundLayer);
+
+        if (groundBelow && groundAbove)
+        {
+            //Debug.Log("squished!");
+            RespawnPlayer();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
