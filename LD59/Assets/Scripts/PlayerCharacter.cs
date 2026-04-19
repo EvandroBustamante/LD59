@@ -35,6 +35,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool hasJumped = false;
     private bool hasDoubleJumped = false;
     private float doubleJumpBufferTimer;
+    private bool instantiatedJumpVFX = false;
 
     private bool hasWeakDash = false;
     private bool hasStrongDash = false;
@@ -54,6 +55,9 @@ public class PlayerCharacter : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private InputManager inputManager;
+
+    [Header("VFX")]
+    public ParticleSystem jumpVFX;
 
     private void Start()
     {
@@ -92,6 +96,7 @@ public class PlayerCharacter : MonoBehaviour
             hasJumped = false;
             hasDoubleJumped = false;
             doubleJumpBufferTimer = doubleJumpBuffer;
+            instantiatedJumpVFX = false;
 
             dashReset = true;
         }
@@ -105,6 +110,13 @@ public class PlayerCharacter : MonoBehaviour
         if (inputManager.isJumping && hangTimer > 0 && !hasJumped)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+
+            if (!instantiatedJumpVFX)
+            {
+                GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
+                Destroy(newParticle, 5f);
+                instantiatedJumpVFX = true;
+            }
         }
         else if (!inputManager.isJumping && rb.linearVelocity.y > 0)
         {
@@ -116,6 +128,9 @@ public class PlayerCharacter : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
             hasDoubleJumped = true;
+
+            GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
+            Destroy(newParticle, 5f);
         }
 
         //Dash:
