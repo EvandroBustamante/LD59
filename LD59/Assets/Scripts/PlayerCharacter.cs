@@ -42,6 +42,9 @@ public class PlayerCharacter : MonoBehaviour
     private float dashCooldownTimer;
     private bool dashReset = false;
 
+    private bool canInteract = false;
+    private BoostSignalInteractable interactableRef;
+
     private bool inDeathTimer = false;
     [HideInInspector] public float dieTimer = 0f;
 
@@ -64,6 +67,7 @@ public class PlayerCharacter : MonoBehaviour
     private void Update()
     {
         SignalLogic();
+        InteractLogic();
     }
 
     private void FixedUpdate()
@@ -173,6 +177,17 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    private void InteractLogic()
+    {
+        if(canInteract && interactableRef != null)
+        {
+            if (inputManager.isInteracting)
+            {
+                interactableRef.Interact();
+            }
+        }
+    }
+
     private IEnumerator Dash()
     {
         float multiplier = 1;
@@ -252,6 +267,12 @@ public class PlayerCharacter : MonoBehaviour
             currentSignal = SignalType.StrongSignal;
         }
 
+        if (collision.CompareTag("Interactable") && collision.GetComponent<BoostSignalInteractable>())
+        {
+            canInteract = true;
+            interactableRef = collision.GetComponent<BoostSignalInteractable>();
+        }
+
         if (collision.CompareTag("Death"))
         {
             RespawnPlayer();
@@ -268,6 +289,11 @@ public class PlayerCharacter : MonoBehaviour
         if(collision.CompareTag("WeakSignal") && currentSignal == SignalType.WeakSignal)
         {
             currentSignal = SignalType.NoSignal;
+        }
+
+        if (collision.CompareTag("Interactable"))
+        {
+            canInteract = false;
         }
     }
 }
