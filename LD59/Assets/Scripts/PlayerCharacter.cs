@@ -128,7 +128,6 @@ public class PlayerCharacter : MonoBehaviour
             {
                 GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
                 Destroy(newParticle, 5f);
-                instantiatedJumpVFX = true;
             }
         }
         else if (!inputManager.isJumping && rb.linearVelocity.y > 0 && !isGrounded)
