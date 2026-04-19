@@ -5,10 +5,10 @@
 			<value>Purple Light 2</value>
 		</property>
 		<property name="name">
-			<value>sfx_scenario_maximize</value>
+			<value>sfx_scenario_platform_maximize</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{35bffd10-e56c-437c-bdd8-6848a67cca1c}</destination>
@@ -85,7 +85,11 @@
 			<destination>{f3e05a2e-00f9-43a1-9503-b9fc494423e4}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{a395b83c-7036-41a7-9e24-c1286569e85e}" />
+	<object class="MultiSound" id="{a395b83c-7036-41a7-9e24-c1286569e85e}">
+		<relationship name="sounds">
+			<destination>{afdb364a-ff26-4bf5-8341-8b182b668ebe}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{f6fda6fb-fc3a-4ee7-8759-00ecfd402c8a}">
 		<relationship name="effects">
 			<destination>{bd3bb205-3980-41b8-85f1-c3d93738060e}</destination>
@@ -95,9 +99,27 @@
 	<object class="MixerBusEffectChain" id="{e2c1f217-2983-497d-9d2d-fa718534be87}">
 		<relationship name="effects">
 			<destination>{058f91f3-7d13-4e7c-a2ba-56031ec29d5a}</destination>
+			<destination>{a9297f40-23ec-4f53-8073-73d7f9108c1a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{36b8e30f-2133-4b32-95f1-269b0668304c}" />
+	<object class="SingleSound" id="{afdb364a-ff26-4bf5-8341-8b182b668ebe}">
+		<relationship name="modulators">
+			<destination>{a7890ab0-3701-4d86-a767-9bdfdf39befa}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{34d69c05-e15a-48e1-90b0-f3ed997defac}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{bd3bb205-3980-41b8-85f1-c3d93738060e}" />
 	<object class="MixerBusFader" id="{058f91f3-7d13-4e7c-a2ba-56031ec29d5a}" />
+	<object class="SpatialiserEffect" id="{a9297f40-23ec-4f53-8073-73d7f9108c1a}" />
+	<object class="RandomizerModulator" id="{a7890ab0-3701-4d86-a767-9bdfdf39befa}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>7</value>
+		</property>
+	</object>
 </objects>

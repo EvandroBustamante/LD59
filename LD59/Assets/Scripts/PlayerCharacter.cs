@@ -66,6 +66,9 @@ public class PlayerCharacter : MonoBehaviour
 
     private float runVFXtimer;
 
+    private float stepsAudioInterval;
+    private float stepsAudioCooldown;
+
     private void Start()
     {
         shadowTrail = GetComponent<ShadowTrail>();
@@ -75,6 +78,7 @@ public class PlayerCharacter : MonoBehaviour
         animator = GetComponent<Animator>();
 
         cameraFollow.followTarget = cameraTarget;
+        currentSignal = SignalType.NoSignal;
     }
 
     private void Update()
@@ -130,6 +134,7 @@ public class PlayerCharacter : MonoBehaviour
 
             if (!instantiatedJumpVFX)
             {
+                AudioManager.Instance.PlayCharacterJump();
                 GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
                 Destroy(newParticle, 5f);
                 instantiatedJumpVFX = true;
@@ -146,6 +151,8 @@ public class PlayerCharacter : MonoBehaviour
             shadowTrail.Activate(true);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
             hasDoubleJumped = true;
+
+            AudioManager.Instance.PlayCharacterDoubleJump();
 
             GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
             Destroy(newParticle, 5f);
@@ -263,11 +270,13 @@ public class PlayerCharacter : MonoBehaviour
 
         if (hasStrongDash)
         {
+            AudioManager.Instance.PlayCharacterDashStrong();
             rb.linearVelocity = new Vector2(strongDashForce * multiplier, 0);
             dashDuration = strongDashDuration;
         }
         else if (hasWeakDash)
         {
+            AudioManager.Instance.PlayCharacterDashWeak();
             rb.linearVelocity = new Vector2(weakDashForce * multiplier, 0);
             dashDuration = weakDashDuration;
         }
@@ -299,6 +308,7 @@ public class PlayerCharacter : MonoBehaviour
     private void RespawnPlayer()
     {
         transform.position = respawnPoint.transform.position;
+        currentSignal = SignalType.NoSignal;
         dieTimer = timeToDie;
         inDeathTimer = false;
     }
@@ -332,6 +342,11 @@ public class PlayerCharacter : MonoBehaviour
             //Debug.Log("squished!");
             RespawnPlayer();
         }
+    }
+
+    public void AudioSteps()
+    {
+        AudioManager.Instance.PlayCharacterSteps();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
