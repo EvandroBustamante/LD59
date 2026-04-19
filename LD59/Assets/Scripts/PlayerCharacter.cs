@@ -7,7 +7,9 @@ public class PlayerCharacter : MonoBehaviour
     [Header("Player Attributes")]
     public float moveSpeed = 5f;
     public float jumpHeight = 5f;
+    public float jumpDuration = 1f;
     public float doubleJumpHeight = 3f;
+    public float doubleJumpDuration = 0.15f;
     public float doubleJumpBuffer = 0.2f;
     public float weakDashForce = 2f;
     public float strongDashForce = 4f;
@@ -33,10 +35,12 @@ public class PlayerCharacter : MonoBehaviour
     private bool isGrounded = false;
     private bool canDoubleJump = true;
     private float hangTimer;
-    private bool hasJumped = false;
-    private bool hasDoubleJumped = false;
+    private bool isJumping = false;
+    private float jumpTimer = 0;
+    private float doubleJumpTimer = 0;
+    private bool isDoubleJumping = false;
     private float doubleJumpBufferTimer;
-    private bool instantiatedJumpVFX = false;
+    private bool pressedJumpKey = false;
 
     private bool hasWeakDash = false;
     private bool hasStrongDash = false;
@@ -65,9 +69,6 @@ public class PlayerCharacter : MonoBehaviour
     public float runVFXinterval;
 
     private float runVFXtimer;
-
-    private float stepsAudioInterval;
-    private float stepsAudioCooldown;
 
     private void Start()
     {
@@ -102,16 +103,16 @@ public class PlayerCharacter : MonoBehaviour
         rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
 
         //Check for ground:
-        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .02f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
 
         if (isGrounded)
         {
             hangTimer = hangTime;
 
-            hasJumped = false;
-            hasDoubleJumped = false;
             doubleJumpBufferTimer = doubleJumpBuffer;
-            instantiatedJumpVFX = false;
+
+            isJumping = false;
+            isDoubleJumping = false;
 
             dashReset = true;
 
@@ -128,37 +129,17 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         //Jump:
-        if (inputManager.isJumping && hangTimer > 0 && !hasJumped)
+        if (inputManager.isJumping && hangTimer > 0 && !isJumping && !pressedJumpKey)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
-
-            if (!instantiatedJumpVFX)
-            {
-                AudioManager.Instance.PlayCharacterJump();
-                GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
-                Destroy(newParticle, 5f);
-                instantiatedJumpVFX = true;
-            }
-        }
-        else if (!inputManager.isJumping && rb.linearVelocity.y > 0 && !isGrounded)
-        {
-            hasJumped = true;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
+            StartCoroutine(Jump());
         }
 
-        if (!isGrounded && canDoubleJump && inputManager.isJumping && hasJumped && !hasDoubleJumped && doubleJumpBufferTimer < 0)
+        if (!isGrounded && canDoubleJump && inputManager.isJumping && !isDoubleJumping && doubleJumpBufferTimer < 0 && !pressedJumpKey)
         {
-            shadowTrail.Activate(true);
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
-            hasDoubleJumped = true;
-
-            AudioManager.Instance.PlayCharacterDoubleJump();
-
-            GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
-            Destroy(newParticle, 5f);
-
-            animator.SetBool("isDoubleJumping", true);
+            StartCoroutine(DoubleJump());
         }
+
+        if (!inputManager.isJumping) pressedJumpKey = false;
 
         //Dash:
         if (hasWeakDash || hasStrongDash)
@@ -255,6 +236,81 @@ public class PlayerCharacter : MonoBehaviour
         else
         {
             runVFXtimer = runVFXinterval;
+        }
+    }
+
+    private IEnumerator Jump()
+    {
+        isJumping = true;
+        pressedJumpKey = true;
+
+        AudioManager.Instance.PlayCharacterJump();
+        GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
+        Destroy(newParticle, 5f);
+
+        jumpTimer = jumpDuration;
+
+        while (inputManager.isJumping)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
+            jumpTimer -= Time.deltaTime;
+
+            if (jumpTimer < 0)
+            {
+                //Jump ended through duration:
+                isJumping = false;
+                yield break;
+            }
+
+            yield return null;
+        }
+
+        if (!inputManager.isJumping)
+        {
+            //Jump ended through cancel input:
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
+            isJumping = false;
+            pressedJumpKey = false;
+            yield break;
+        }
+    }
+
+    private IEnumerator DoubleJump()
+    {
+        isDoubleJumping = true;
+        pressedJumpKey = true;
+
+        AudioManager.Instance.PlayCharacterDoubleJump();
+        GameObject newParticle = Instantiate(jumpVFX.gameObject, groundCheck1.transform.position, Quaternion.identity);
+        Destroy(newParticle, 5f);
+        shadowTrail.Activate(true);
+
+        animator.SetBool("isDoubleJumping", true);
+
+        doubleJumpTimer = doubleJumpDuration;
+
+        while (inputManager.isJumping)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
+            doubleJumpTimer -= Time.deltaTime;
+
+            if(doubleJumpTimer < 0)
+            {
+                //Jump ended through duration:
+                isDoubleJumping = false;
+                yield break;
+            }
+
+            yield return null;
+        }
+
+        if (inputManager.isJumping)
+        {
+            //Jump ended through cancel input:
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
+            isDoubleJumping = false;
+            pressedJumpKey = false;
+            yield break;
         }
     }
 

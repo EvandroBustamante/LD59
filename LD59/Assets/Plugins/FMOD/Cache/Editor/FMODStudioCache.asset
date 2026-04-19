@@ -27,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-8081005610686871288
+--- !u!114 &-6946182775545180814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,18 +37,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/sfx/scenario/sfx_scenario_maximize
+  m_Name: event:/sfx/scenario/sfx_scenario_platform_minimize
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/sfx/scenario/sfx_scenario_maximize
+  Path: event:/sfx/scenario/sfx_scenario_platform_minimize
   Guid:
-    Data1: 1123185983
-    Data2: 1110762780
-    Data3: 1123602873
-    Data4: 508333742
+    Data1: 1286069968
+    Data2: 1128274169
+    Data3: -802503254
+    Data4: 1080929806
   Banks:
   - {fileID: 7421581337012364605}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -204,11 +204,38 @@ MonoBehaviour:
   Path: FMOD/FMOD/fmod_ld59/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639122068987340697
+  lastModified: 639122232851966538
   FileSizes:
   - Name: 
-    Value: 1746
+    Value: 1838
   Exists: 1
+--- !u!114 &-450992213816742838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/scenario/sfx_scenario_platform_move
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/scenario/sfx_scenario_platform_move
+  Guid:
+    Data1: -521903030
+    Data2: 1276120913
+    Data3: 803886780
+    Data4: -585834092
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9200
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +255,6 @@ MonoBehaviour:
   - {fileID: -8149503352860112836}
   - {fileID: 6292869010338299558}
   - {fileID: -2553371210528236315}
-  - {fileID: -8081005610686871288}
   - {fileID: 2371512358376315759}
   - {fileID: -5850294529882705582}
   - {fileID: -5796856767306210875}
@@ -237,15 +263,18 @@ MonoBehaviour:
   - {fileID: -2428053854608558578}
   - {fileID: 4479483814741547443}
   - {fileID: 1288184028982489874}
-  - {fileID: 3575810758556520009}
   - {fileID: 8373622405546791441}
+  - {fileID: 7050603378638318966}
+  - {fileID: -450992213816742838}
+  - {fileID: 488556833906385563}
+  - {fileID: -6946182775545180814}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7421581337012364605}
   StringsBanks:
   - {fileID: -781344793746188434}
   cacheVersion: 131859
-  cacheTime: 639122148925828550
+  cacheTime: 639122232851966538
   SerializableEventsDict:
   - key: event:/sfx/main_char/sfx_char_doublejump
     index: 0
@@ -253,28 +282,59 @@ MonoBehaviour:
     index: 1
   - key: event:/sfx/main_char/sfx_char_death
     index: 2
-  - key: event:/sfx/scenario/sfx_scenario_maximize
-    index: 3
   - key: event:/sfx/scenario/sfx_scenario_saw_lp
-    index: 4
+    index: 3
   - key: event:/sfx/ui/sfx_ui_click_mail
-    index: 5
+    index: 4
   - key: event:/sfx/main_char/sfx_char_jump
-    index: 6
+    index: 5
   - key: event:/music/mus_tutorial_lp
-    index: 7
+    index: 6
   - key: event:/sfx/main_char/sfx_char_dash_weak
-    index: 8
+    index: 7
   - key: event:/sfx/main_char/sfx_char_steps
-    index: 9
+    index: 8
   - key: event:/sfx/main_char/sfx_char_dash_strong
-    index: 10
+    index: 9
   - key: event:/music/mus_gameplay_lp
-    index: 11
-  - key: event:/sfx/scenario/sfx_scenario_minimize
-    index: 12
+    index: 10
   - key: event:/sfx/ambience/amb_computer_lp
+    index: 11
+  - key: event:/sfx/scenario/sfx_scenario_platform_maximize
+    index: 12
+  - key: event:/sfx/scenario/sfx_scenario_platform_move
     index: 13
+  - key: event:/sfx/scenario/sfx_scenario_platform_cascada
+    index: 14
+  - key: event:/sfx/scenario/sfx_scenario_platform_minimize
+    index: 15
+--- !u!114 &488556833906385563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/scenario/sfx_scenario_platform_cascada
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/scenario/sfx_scenario_platform_cascada
+  Guid:
+    Data1: 344879280
+    Data2: 1246861828
+    Data3: -1536094832
+    Data4: 1538443698
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &1288184028982489874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,19 +376,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
   Path: event:/sfx/scenario/sfx_scenario_saw_lp
   Guid:
-    Data1: -521903030
-    Data2: 1276120913
-    Data3: 803886780
-    Data4: -585834092
+    Data1: 245725567
+    Data2: 1130745626
+    Data3: 289585329
+    Data4: 650162935
   Banks:
   - {fileID: 7421581337012364605}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 9200
 --- !u!114 &2722181681352695942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,33 +407,6 @@ MonoBehaviour:
     Data2: 1257692192
     Data3: 1427728517
     Data4: -481742255
-  Banks:
-  - {fileID: 7421581337012364605}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3575810758556520009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/sfx/scenario/sfx_scenario_minimize
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/sfx/scenario/sfx_scenario_minimize
-  Guid:
-    Data1: 1286069968
-    Data2: 1128274169
-    Data3: -802503254
-    Data4: 1080929806
   Banks:
   - {fileID: 7421581337012364605}
   IsStream: 0
@@ -437,6 +470,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7050603378638318966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/scenario/sfx_scenario_platform_maximize
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/scenario/sfx_scenario_platform_maximize
+  Guid:
+    Data1: 1123185983
+    Data2: 1110762780
+    Data3: 1123602873
+    Data4: 508333742
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7421581337012364605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +512,7 @@ MonoBehaviour:
   Path: FMOD/FMOD/fmod_ld59/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639122148925828550
+  lastModified: 639122232851906487
   FileSizes: []
   Exists: 1
 --- !u!114 &8373622405546791441
@@ -469,16 +529,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
   Path: event:/sfx/ambience/amb_computer_lp
   Guid:
-    Data1: 1955133948
-    Data2: 1167070152
-    Data3: -1553671263
-    Data4: -1313168589
+    Data1: 232951248
+    Data2: 1266834362
+    Data3: -240866166
+    Data4: -1612220449
   Banks:
   - {fileID: 7421581337012364605}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 9200
