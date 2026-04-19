@@ -145,29 +145,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62028dce75b9dd742b3106ac99e56547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacter
-  moveSpeed: 3
+  moveSpeed: 1.8
   jumpHeight: 3
-  doubleJumpHeight: 3
-  doubleJumpBuffer: 0.3
-  weakDashForce: 7
-  strongDashForce: 9
-  weakDashDuration: 0.1
-  strongDashDuration: 0.2
-  dashCooldown: 1
+  doubleJumpHeight: 3.5
+  doubleJumpBuffer: 0.2
+  weakDashForce: 5
+  strongDashForce: 7
+  weakDashDuration: 0.12
+  strongDashDuration: 0.15
+  dashCooldown: 0.2
   timeToDie: 3
   hangTime: 0.1
-  cameraAheadAmount: 0.7
-  groundCheck1: {fileID: 5610858317805808661}
-  groundCheck2: {fileID: 3516406508718303198}
+  cameraAheadAmount: 0
+  groundCheck1: {fileID: 0}
+  groundCheck2: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  cameraTarget: {fileID: 8547049764545775904}
+  cameraTarget: {fileID: 0}
   cameraFollow: {fileID: 0}
-  currentSignal: 0
-  dieTimer: 0
-  jumpVFX: {fileID: 8464366450671502285}
-  runVFX: {fileID: 3796432903419437278}
+  currentSignal: 2
+  dieTimer: 2.6409366
+  jumpVFX: {fileID: 0}
+  runVFX: {fileID: 0}
   runVFXinterval: 0.15
 --- !u!114 &8109864925873856288
 MonoBehaviour:
@@ -433,11 +433,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8103503314516262686, guid: ed3257f578f3bcb43820a08a96345d14, type: 3}
   m_PrefabInstance: {fileID: 4412896177518059707}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &8464366450671502285 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5209180160651617142, guid: ed3257f578f3bcb43820a08a96345d14, type: 3}
-  m_PrefabInstance: {fileID: 4412896177518059707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8999628420514923432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,10 +493,5 @@ PrefabInstance:
 --- !u!4 &905354407162182838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8103503314516262686, guid: 9f3e4c74cdf740d498aec08b58bd3275, type: 3}
-  m_PrefabInstance: {fileID: 8999628420514923432}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3796432903419437278 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5209180160651617142, guid: 9f3e4c74cdf740d498aec08b58bd3275, type: 3}
   m_PrefabInstance: {fileID: 8999628420514923432}
   m_PrefabAsset: {fileID: 0}
