@@ -687,6 +687,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &300069127 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8464366450671502285, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+  m_PrefabInstance: {fileID: 5290975905323609397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &312365750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1427,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &724247666 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5610858317805808661, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+  m_PrefabInstance: {fileID: 5290975905323609397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &791711684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2239,11 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!4 &1337938610 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3516406508718303198, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+  m_PrefabInstance: {fileID: 5290975905323609397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1523107267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2545,6 +2560,11 @@ Transform:
   - {fileID: 1523107268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1805999648 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3796432903419437278, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+  m_PrefabInstance: {fileID: 5290975905323609397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1870358464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,9 +3201,29 @@ PrefabInstance:
       value: -0.0015295746
       objectReference: {fileID: 0}
     - target: {fileID: 7730367326636757722, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+      propertyPath: runVFX
+      value: 
+      objectReference: {fileID: 1805999648}
+    - target: {fileID: 7730367326636757722, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+      propertyPath: jumpVFX
+      value: 
+      objectReference: {fileID: 300069127}
+    - target: {fileID: 7730367326636757722, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
       propertyPath: cameraFollow
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 7730367326636757722, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+      propertyPath: cameraTarget
+      value: 
+      objectReference: {fileID: 1674791590}
+    - target: {fileID: 7730367326636757722, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+      propertyPath: groundCheck1
+      value: 
+      objectReference: {fileID: 724247666}
+    - target: {fileID: 7730367326636757722, guid: 1b49624f2c41dca4c95a9265962385ad, type: 3}
+      propertyPath: groundCheck2
+      value: 
+      objectReference: {fileID: 1337938610}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
