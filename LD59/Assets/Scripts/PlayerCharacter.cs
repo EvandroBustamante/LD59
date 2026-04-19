@@ -36,7 +36,6 @@ public class PlayerCharacter : MonoBehaviour
     private bool hasDoubleJumped = false;
     private float doubleJumpBufferTimer;
     private bool instantiatedJumpVFX = false;
-    private bool animatingJump = false;
 
     private bool hasWeakDash = false;
     private bool hasStrongDash = false;
@@ -107,7 +106,7 @@ public class PlayerCharacter : MonoBehaviour
             instantiatedJumpVFX = false;
 
             dashReset = true;
-
+            
             animator.SetBool("hitGround", true);
             animator.SetBool("isDoubleJumping", false);
         }
@@ -137,7 +136,7 @@ public class PlayerCharacter : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
         }
 
-        if(!isGrounded && canDoubleJump && inputManager.isJumping && hasJumped && !hasDoubleJumped && doubleJumpBufferTimer < 0)
+        if (!isGrounded && canDoubleJump && inputManager.isJumping && hasJumped && !hasDoubleJumped && doubleJumpBufferTimer < 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
             hasDoubleJumped = true;
@@ -183,7 +182,6 @@ public class PlayerCharacter : MonoBehaviour
         if (rb.linearVelocity.y != 0)
         {
             animator.SetFloat("jumpVel", rb.linearVelocity.y);
-            animatingJump = true;
         }
 
         //Move camera target:
