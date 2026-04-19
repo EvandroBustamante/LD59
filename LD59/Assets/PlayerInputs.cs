@@ -254,7 +254,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fce63c18-7f53-4343-856c-c497b9296c22"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

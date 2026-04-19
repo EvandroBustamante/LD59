@@ -43,6 +43,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool isDashing = false;
     private float dashCooldownTimer;
     private bool dashReset = false;
+    private ShadowTrail ShadowTrail;
 
     private bool canInteract = false;
     private BoostSignalInteractable interactableRef;
@@ -67,6 +68,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Start()
     {
+        ShadowTrail = GetComponent<ShadowTrail>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         inputManager = GetComponent<InputManager>();
@@ -108,7 +110,8 @@ public class PlayerCharacter : MonoBehaviour
             instantiatedJumpVFX = false;
 
             dashReset = true;
-            
+
+            ShadowTrail.Activate(false);
             animator.SetBool("hitGround", true);
             animator.SetBool("isDoubleJumping", false);
         }
@@ -140,6 +143,7 @@ public class PlayerCharacter : MonoBehaviour
 
         if (!isGrounded && canDoubleJump && inputManager.isJumping && hasJumped && !hasDoubleJumped && doubleJumpBufferTimer < 0)
         {
+            ShadowTrail.Activate(true);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, doubleJumpHeight);
             hasDoubleJumped = true;
 
@@ -273,8 +277,11 @@ public class PlayerCharacter : MonoBehaviour
         isDashing = true;
         dashReset = false;
 
+        ShadowTrail.Activate(true);
+
         yield return new WaitForSeconds(dashDuration);
 
+        ShadowTrail.Activate(false);
         animator.SetBool("isDashing", false);
 
         isDashing = false;
