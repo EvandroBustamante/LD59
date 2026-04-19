@@ -52,6 +52,9 @@ TagManager:
   - name: Ground
     uniqueID: 4210188171
     locked: 0
+  - name: Player
+    uniqueID: 348327129
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
