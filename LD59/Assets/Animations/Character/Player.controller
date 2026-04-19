@@ -111,6 +111,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: jumpVel
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: hitGround
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1501596552742607830}
   m_Solo: 0
@@ -674,6 +677,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: jumpVel
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: hitGround
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1501596552742607830}
