@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{d9477f7e-8cb9-46ec-bbff-989d1e67f334}">
+		<property name="assetPath">
+			<value>mus_tutorial_nomaster.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>62.785854166666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7e3b2a21-0aaf-48f6-9a74-8bfcb73908fd}</destination>
+		</relationship>
+	</object>
+</objects>

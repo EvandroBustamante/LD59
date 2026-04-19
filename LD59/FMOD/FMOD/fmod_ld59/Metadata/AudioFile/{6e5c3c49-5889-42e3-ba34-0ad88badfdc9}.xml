@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6e5c3c49-5889-42e3-ba34-0ad88badfdc9}">
+		<property name="assetPath">
+			<value>sfx_char_dash_strong_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.46666666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7e3b2a21-0aaf-48f6-9a74-8bfcb73908fd}</destination>
+		</relationship>
+	</object>
+</objects>
