@@ -147,17 +147,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacter
   moveSpeed: 1.8
-  jumpHeight: 3
+  jumpHeight: 2.2
   jumpDuration: 0.15
-  doubleJumpHeight: 3.5
+  doubleJumpHeight: 2
   doubleJumpDuration: 0.15
   doubleJumpBuffer: 0.2
-  weakDashForce: 5
-  strongDashForce: 7
-  weakDashDuration: 0.12
-  strongDashDuration: 0.15
+  weakDashForce: 3.5
+  strongDashForce: 3.5
+  weakDashDuration: 0.14
+  strongDashDuration: 0.18
   dashCooldown: 0.2
-  timeToDie: 3
+  timeToDie: 4
   hangTime: 0.1
   cameraAheadAmount: 0
   groundCheck1: {fileID: 5610858317805808661}
