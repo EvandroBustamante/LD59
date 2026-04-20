@@ -35,7 +35,7 @@ public class Antenna : MonoBehaviour
 
     private void Update()
     {
-        if (t < 1)
+        if (t < 1 && antenaTemp)
         {
             antenaTemp.GetComponent<AntennaSignal>().weakSignal.GetComponent<CircleCollider2D>().radius = Mathf.Lerp(0, maxWeakRadius, t);
             antenaTemp.GetComponent<AntennaSignal>().strongSignal.GetComponent<CircleCollider2D>().radius = Mathf.Lerp(0, maxStrongRadius, t);
