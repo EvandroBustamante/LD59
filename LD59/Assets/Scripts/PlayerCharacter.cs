@@ -486,7 +486,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (!canMove) return;
 
-        bool groundBelow = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
+        bool groundBelow = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) && Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
         bool groundAbove = Physics2D.OverlapCircle(headCheck.position, .0025f, groundLayer);
 
         if (groundBelow && groundAbove)
