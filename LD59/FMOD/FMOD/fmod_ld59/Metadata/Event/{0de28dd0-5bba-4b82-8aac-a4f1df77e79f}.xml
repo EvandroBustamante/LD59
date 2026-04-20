@@ -8,7 +8,7 @@
 			<value>amb_computer_lp</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{e75b40ec-b4ba-4581-bc6b-d03c64b470e4}</destination>
@@ -217,7 +217,6 @@
 	<object class="MixerBusEffectChain" id="{4d247865-f76b-40d0-a4d9-a67e2f064c9f}">
 		<relationship name="effects">
 			<destination>{cea2501c-3b8b-4707-a8eb-18d8d38369f0}</destination>
-			<destination>{f6f2b022-abde-4389-b716-4204e82d11da}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{26753e73-af00-4b1e-9011-746bd8d6b7d1}" />
@@ -254,7 +253,6 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{cea2501c-3b8b-4707-a8eb-18d8d38369f0}" />
-	<object class="SpatialiserEffect" id="{f6f2b022-abde-4389-b716-4204e82d11da}" />
 	<object class="AutomationPoint" id="{2121f3f9-9588-47b9-996c-9c682f7afc4d}">
 		<property name="position">
 			<value>0</value>
