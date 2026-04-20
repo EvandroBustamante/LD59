@@ -1,29 +1,37 @@
+using System.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class RoundArea : MonoBehaviour
 {
     public LineRenderer circleRenderer;
     public CircleCollider2D circleCollider;
+    public Transform circleTransform;
     public float width;
     public int sections;
     public Color color;
+    public float rotationSpeed;
+
+    public Color32[] colors;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        circleRenderer.startWidth = width;
-        circleRenderer.endWidth = width;
-
-        circleRenderer.startColor = color;
-        circleRenderer.endColor = color;
+        // Rainbow();
+        circleRenderer.material.color = color;
     }
 
     // Update is called once per frame
     void Update()
     {
         DrawCircle(sections, circleCollider.radius);
+
+        circleTransform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+
+        circleRenderer.startWidth = width;
+        circleRenderer.endWidth = width;
     }
 
     void DrawCircle (int steps, float radius)
@@ -48,4 +56,39 @@ public class RoundArea : MonoBehaviour
         }
   
     }
+
+    void Rainbow()
+    {
+        colors = new Color32[7]
+        {
+            new Color32(255,0,0,255),
+            new Color32(255,165,0,255),
+            new Color32(255,255,0,255),
+            new Color32(0,255,0,255),
+            new Color32(0,0,255,255),
+            new Color32(75,0,130,255),
+            new Color32(238,130,238,255),
+        };
+        StartCoroutine(Cycle());
+    }
+
+    public IEnumerator Cycle()
+    {
+        int startColor = 0;
+        int endColor = 0;
+        startColor = Random.Range(0, colors.Length);
+        endColor = Random.Range(0, colors.Length);
+
+        while (true)
+        {
+            for(float interpolant = 0f; interpolant <1f; interpolant+= 0.01f)
+            {
+                circleRenderer.material.color = Color.Lerp(colors[startColor], colors[endColor], interpolant);
+                yield return null;
+            }
+            startColor = endColor;
+            endColor = Random.Range(0, colors.Length);
+        }
+    }
+
 }
