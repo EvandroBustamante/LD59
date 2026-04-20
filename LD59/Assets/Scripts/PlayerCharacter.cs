@@ -114,7 +114,7 @@ public class PlayerCharacter : MonoBehaviour
         rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
 
         //Check for ground:
-        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .0025f, groundLayer);
 
         if (isGrounded)
         {
