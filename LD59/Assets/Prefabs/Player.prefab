@@ -159,7 +159,7 @@ MonoBehaviour:
   weakDashDuration: 0.14
   strongDashDuration: 0.18
   dashCooldown: 0.2
-  timeToDie: 4
+  timeToDie: 2.5
   hangTime: 0.1
   cameraAheadAmount: 0.5
   cameraAheadSpeed: 1
