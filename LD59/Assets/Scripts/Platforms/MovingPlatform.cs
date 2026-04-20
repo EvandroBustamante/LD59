@@ -60,7 +60,7 @@ public class MovingPlatform : Platform
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<PlayerCharacter>().GetIsGrounded())
         {
             collision.transform.SetParent(this.transform);
         }

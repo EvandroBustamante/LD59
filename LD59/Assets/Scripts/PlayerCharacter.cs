@@ -465,6 +465,11 @@ public class PlayerCharacter : MonoBehaviour
         AudioManager.Instance.PlayCharacterSteps();
     }
 
+    public bool GetIsGrounded()
+    {
+        return isGrounded;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Chunk"))
