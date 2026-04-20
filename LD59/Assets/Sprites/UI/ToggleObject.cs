@@ -10,6 +10,7 @@ public class UIToggleTween : MonoBehaviour
 
     public void Toggle()
     {
+        AudioManager.Instance.PlayClickUI();
         if (target.activeSelf)
         {
             Hide();

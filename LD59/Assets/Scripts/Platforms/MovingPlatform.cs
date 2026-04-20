@@ -7,7 +7,7 @@ using FMODUnity;
 [RequireComponent(typeof(StudioEventEmitter))]
 public class MovingPlatform : Platform
 {
-   
+    public float rotationSpeed;
     public Transform pointA;
     public Transform pointB;
     public float speed;
@@ -19,6 +19,7 @@ public class MovingPlatform : Platform
 
     private void Awake()
     {
+        transform.localScale = new Vector3(1f, 1f, 1f);
         StartCoroutine(DelayStart());
     }
 
@@ -47,6 +48,7 @@ public class MovingPlatform : Platform
 
             transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, speed * Time.deltaTime);
         }
+
     }
 
     private IEnumerator DelayStart()

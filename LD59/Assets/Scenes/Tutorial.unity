@@ -530,8 +530,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.17}
-    newSize: {x: 0.16, y: 0.17}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183b6076a8fdd0148b9153c832f9664b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneInteractable
-  sceneToLoad: 1
+  sceneToLoad: 2
 --- !u!212 &892526413
 SpriteRenderer:
   serializedVersion: 2
@@ -598,14 +598,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -132721057514660443, guid: 58aec57fcf6801846ae4ecd315942635, type: 3}
+  m_Sprite: {fileID: 7948665566698848494, guid: 58aec57fcf6801846ae4ecd315942635, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.17}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -958,6 +958,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1238524439651968702, guid: 59d0dbf9b550e4846931948bbd360139, type: 3}
+      propertyPath: isTutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3989620472247939177, guid: 59d0dbf9b550e4846931948bbd360139, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.6273

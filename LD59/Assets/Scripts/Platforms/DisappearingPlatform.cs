@@ -16,6 +16,7 @@ public class DisappearingPlatform : Platform
 
     private void Awake()
     {
+        transform.localScale = new Vector3(1f, 1f, 1f);
         emitterMin = GetComponent<StudioEventEmitter>();
         emitterMax = GetComponent<StudioEventEmitter>();
         sr = GetComponent<SpriteRenderer>();

@@ -191,3 +191,18 @@ MonoBehaviour:
       Data3: -1894732353
       Data4: -24419551
     Path: event:/sfx/main_char/sfx_char_pickable_wifi
+  uiClick:
+    Guid:
+      Data1: -1356707566
+      Data2: 1124164769
+      Data3: -1870676338
+      Data4: -2104620556
+    Path: event:/sfx/ui/sfx_ui_click_general
+  blueScreen:
+    Guid:
+      Data1: 1708140297
+      Data2: 1081593059
+      Data3: -792927325
+      Data4: 670773331
+    Path: event:/sfx/ui/sfx_blue_screen_error
+  isTutorial: 0

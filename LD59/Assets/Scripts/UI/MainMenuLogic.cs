@@ -33,17 +33,17 @@ public class MainMenuLogic : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         AudioManager.Instance.StopMusicMenu();
-        AudioManager.Instance.StopMusicTutorial();
-        AudioManager.Instance.PlayAmbience();
     }
 
     private void StartGame()
     {
+        AudioManager.Instance.PlayClickUI();
         SceneManager.LoadScene(sceneToLoad);
     }
 
     private void MuteGame()
     {
+        AudioManager.Instance.PlayClickUI();
         if (!isMuted)
         {
             AudioManager.Instance.SetMusicVolume(0);

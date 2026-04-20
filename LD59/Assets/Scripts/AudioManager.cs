@@ -35,6 +35,8 @@ public class AudioManager : MonoBehaviour
     public EventReference trashCan;
     public EventReference bullet;
     public EventReference pickableWifi;
+    public EventReference uiClick;
+    public EventReference blueScreen;
 
     private VCA musicVCA;
     private VCA sfxVCA;
@@ -43,6 +45,7 @@ public class AudioManager : MonoBehaviour
     public EventInstance tutorialMusicInstance;
     public EventInstance ambienceInstance;
 
+    public bool isTutorial = false;
 
 
     private void Awake()
@@ -62,10 +65,16 @@ public class AudioManager : MonoBehaviour
         musicVCA = RuntimeManager.GetVCA("vca:/vca_music_fader");
         sfxVCA = RuntimeManager.GetVCA("vca:/vca_sfx_fader");
 
-        PlayMusicMenu();
+        StopAll();
+        if (!isTutorial) PlayMusicMenu();
+        else PlayMusicTutorial();
         PlayAmbience();
     }
 
+    public void StopAll()
+    {
+        RuntimeManager.GetBus("Bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 
     #region Music
 
@@ -216,6 +225,16 @@ public class AudioManager : MonoBehaviour
     public void PlayPickableWifi()
     {
         RuntimeManager.PlayOneShot(pickableWifi);
+    }
+
+    public void PlayClickUI()
+    {
+        RuntimeManager.PlayOneShot(uiClick);
+    }
+
+    public void PlayBlueScreen()
+    {
+        RuntimeManager.PlayOneShot(blueScreen);
     }
 
     #endregion

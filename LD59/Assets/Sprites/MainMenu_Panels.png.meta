@@ -134,13 +134,13 @@ TextureImporter:
       name: MainMenu_Panels_1
       rect:
         serializedVersion: 2
-        x: 104
-        y: 21
-        width: 146
-        height: 173
+        x: 112
+        y: 24
+        width: 128
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 18, z: 14, w: 18}
       customData: 
       outline: []
       physicsShape: []
