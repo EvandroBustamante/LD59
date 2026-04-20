@@ -20,12 +20,13 @@ public class RoundArea : MonoBehaviour
     void Start()
     {
         // Rainbow();
-        circleRenderer.material.color = color;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        circleRenderer.material.color = color;
         DrawCircle(sections, circleCollider.radius);
 
         circleTransform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
