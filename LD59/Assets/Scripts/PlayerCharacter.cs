@@ -23,6 +23,7 @@ public class PlayerCharacter : MonoBehaviour
     public float cameraAheadSpeed = 1f;
     public float deathAnimationJumpPower = 2f;
     public float deathAnimationDuration = 3f;
+    public float respawnDelay = 0.2f;
     public float deathCameraShakeDuration = 0.3f;
     public float deathCameraShakeStrength = 1f;
 
@@ -399,6 +400,7 @@ public class PlayerCharacter : MonoBehaviour
         isRespawning = true;
         batteryAnimator.SetTrigger("respawn");
         batterySr.enabled = false;
+        AudioManager.Instance.PlayCharacterDeath();
 
         //Character falling:
         float randomFinalX = Random.Range(transform.position.x - 3, transform.position.x + 3);
@@ -413,13 +415,14 @@ public class PlayerCharacter : MonoBehaviour
         GameObject dustParticle = Instantiate(deathDust.gameObject, transform.position, Quaternion.identity);
         Destroy(dustParticle, 3f);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(deathAnimationDuration + respawnDelay);
 
         animator.SetTrigger("respawn");
         rb.linearVelocity = new Vector3(0, 0, 0);
         cameraFollow.canFollow = true;
         transform.position = respawnPoint.transform.position;
         col.enabled = true;
+        AudioManager.Instance.PlayCharacterSpawn();
 
         yield return new WaitForSeconds(0.5f);
 

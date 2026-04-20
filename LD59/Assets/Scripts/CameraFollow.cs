@@ -22,7 +22,7 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canFollow)
+        if (canFollow && chunkBounds != null)
         {
             followTrasform = followTarget.position;
 

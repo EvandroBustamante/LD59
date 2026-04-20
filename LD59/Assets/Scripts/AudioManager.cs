@@ -1,6 +1,7 @@
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine;
+using FMOD;
 
 public class AudioManager : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class AudioManager : MonoBehaviour
     private VCA musicVCA;
     private VCA sfxVCA;
 
+    public EventInstance menuMusicInstance;
+    public EventInstance tutorialMusicInstance;
+    public EventInstance ambienceInstance;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -55,17 +60,48 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusicMenu()
     {
-        RuntimeManager.PlayOneShot(musicMenu);
+        menuMusicInstance = RuntimeManager.CreateInstance(musicMenu);
+        menuMusicInstance.start();
+    }
+
+    public void StopMusicMenu()
+    {
+        menuMusicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        menuMusicInstance.release();
     }
 
     public void PlayMusicTutorial()
     {
-        RuntimeManager.PlayOneShot(musicTutorial);
+        tutorialMusicInstance = RuntimeManager.CreateInstance(musicTutorial);
+        tutorialMusicInstance.start();
+    }
+
+    public void StopMusicTutorial()
+    {
+        tutorialMusicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        tutorialMusicInstance.release();
     }
 
     public void PlayAmbience()
     {
-        RuntimeManager.PlayOneShot(computerAmbience);
+        ambienceInstance = RuntimeManager.CreateInstance(computerAmbience);
+        ambienceInstance.start();
+    }
+
+    public void StopAmbience()
+    {
+        ambienceInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        ambienceInstance.release();
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVCA.setVolume(volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxVCA.setVolume(volume);
     }
 
     #endregion
