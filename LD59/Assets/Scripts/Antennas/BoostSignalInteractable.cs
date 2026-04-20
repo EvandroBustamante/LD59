@@ -22,7 +22,7 @@ public class BoostSignalInteractable : MonoBehaviour
     {
         if (!hasInteracted)
         {
-            wallToEnable.EnableWall();
+            if(wallToEnable != null) wallToEnable.EnableWall();
 
             indexListCounter = 0;
             foreach (Antenna antenna in antennasToBoost)
