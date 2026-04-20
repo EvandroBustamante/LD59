@@ -10,6 +10,7 @@ public class GrowingPlatform : Platform
     public Transform scaleRef;
     public float scaleUpSpeed;
     public float scaleDownSpeed;
+    public SpriteRenderer sprite;
 
     private float timer;
     private bool isAlive = false;
@@ -73,6 +74,8 @@ public class GrowingPlatform : Platform
 
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetPos.x, targetSpeed * Time.deltaTime), Mathf.Lerp(transform.position.y, targetPos.y, targetSpeed * Time.deltaTime), transform.position.z);
             transform.localScale = new Vector3(Mathf.Lerp(transform.localScale.x, targetScale.x, targetSpeed * Time.deltaTime), Mathf.Lerp(transform.localScale.y, targetScale.y, targetSpeed * Time.deltaTime), transform.localScale.z);
+            sprite.size = new Vector2(Mathf.Lerp(sprite.size.x, targetScale.x, targetSpeed * Time.deltaTime), Mathf.Lerp(sprite.size.y, targetScale.y, targetSpeed * Time.deltaTime));
+            sprite.transform.position = transform.position;
         }
     }
 }
