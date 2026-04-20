@@ -165,6 +165,7 @@ MonoBehaviour:
   cameraAheadSpeed: 1
   deathAnimationJumpPower: 2
   deathAnimationDuration: 1.5
+  respawnDelay: 0
   deathCameraShakeDuration: 0.4
   deathCameraShakeStrength: 0.2
   groundCheck1: {fileID: 5610858317805808661}
