@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class Shooter : Platform
@@ -18,8 +19,11 @@ public class Shooter : Platform
     private float waitingTimer;
     private float bulletTimer;
 
+    private StudioEventEmitter trashCanShoot;
+
     private void Awake()
     {
+        trashCanShoot = GetComponent<StudioEventEmitter>();
         bulletTimer = bulletInterval;
     }
 
@@ -69,6 +73,8 @@ public class Shooter : Platform
 
             if(bulletTimer < 0)
             {
+                trashCanShoot.EventReference = AudioManager.Instance.trashCan;
+                trashCanShoot.Play();
                 GameObject newBullet = Instantiate(bulletProjectile, transform.position, Quaternion.identity);
                 newBullet.GetComponent<Bullet>().speedX = bulletSpeedX;
                 newBullet.GetComponent<Bullet>().speedY = bulletSpeedY;

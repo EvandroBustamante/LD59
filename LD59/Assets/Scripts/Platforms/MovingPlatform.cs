@@ -1,9 +1,13 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
+
+[RequireComponent(typeof(StudioEventEmitter))]
 public class MovingPlatform : Platform
 {
+   
     public Transform pointA;
     public Transform pointB;
     public float speed;
@@ -11,6 +15,7 @@ public class MovingPlatform : Platform
 
     private bool goingA = false;
     private Transform currentTarget;
+
 
     private void Awake()
     {
@@ -50,11 +55,11 @@ public class MovingPlatform : Platform
 
         if (isPlatform)
         {
-            AudioManager.Instance.PlayMovingPlatform(gameObject);
+            /*AudioManager.Instance.PlayMovingPlatform(gameObject);
         }
         else
         {
-            AudioManager.Instance.PlayMovingSaw(gameObject);
+            AudioManager.Instance.PlayMovingSaw(gameObject);*/
         }
     }
 

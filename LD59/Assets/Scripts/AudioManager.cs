@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine;
@@ -27,6 +29,8 @@ public class AudioManager : MonoBehaviour
     public EventReference cascadingPlatform;
     public EventReference maximizePlatform;
     public EventReference minimizePlatform;
+    public EventReference trashCan;
+    public EventReference bullet;
 
     private VCA musicVCA;
     private VCA sfxVCA;
@@ -34,6 +38,8 @@ public class AudioManager : MonoBehaviour
     public EventInstance menuMusicInstance;
     public EventInstance tutorialMusicInstance;
     public EventInstance ambienceInstance;
+
+
 
     private void Awake()
     {
@@ -55,6 +61,7 @@ public class AudioManager : MonoBehaviour
         PlayMusicMenu();
         PlayAmbience();
     }
+
 
     #region Music
 

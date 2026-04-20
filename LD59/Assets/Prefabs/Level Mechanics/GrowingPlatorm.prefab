@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1228764751964776091}
   - component: {fileID: 1691094407895696856}
   - component: {fileID: 192085691074299739}
+  - component: {fileID: 6279982809091732881}
   m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
@@ -158,6 +159,37 @@ MonoBehaviour:
   scaleRef: {fileID: 4169952709925137434}
   scaleUpSpeed: 1
   scaleDownSpeed: 1
+--- !u!114 &6279982809091732881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178863761089936129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1123185983
+      Data2: 1110762780
+      Data3: 1123602873
+      Data4: 508333742
+    Path: event:/sfx/scenario/sfx_scenario_platform_maximize
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3208040054805238503
 GameObject:
   m_ObjectHideFlags: 0

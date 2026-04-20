@@ -1,4 +1,5 @@
 using System.Collections;
+using FMODUnity;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -18,8 +19,17 @@ public class GrowingPlatform : Platform
     private Vector3 targetScale;
     private float targetSpeed;
 
+
+    private StudioEventEmitter emitterMin;
+    private StudioEventEmitter emitterMax;
+
+
+
     private void Awake()
     {
+        emitterMin = GetComponent<StudioEventEmitter>();
+        emitterMax = GetComponent<StudioEventEmitter>();
+
         scaleRef.gameObject.SetActive(false);
         originalPos = transform.position;
         originalScale = transform.lossyScale;
@@ -38,7 +48,10 @@ public class GrowingPlatform : Platform
 
             if (isAlive && timer < 0)
             {
-                AudioManager.Instance.PlayMinimizePlatform(gameObject);
+                emitterMax.Stop();
+                emitterMin.EventReference = AudioManager.Instance.minimizePlatform;
+                emitterMin.Play();
+                /*AudioManager.Instance.PlayMinimizePlatform(gameObject);*/
                 targetPos = originalPos;
                 targetScale = originalScale;
                 targetSpeed = scaleDownSpeed;
@@ -47,7 +60,10 @@ public class GrowingPlatform : Platform
             }
             else if (!isAlive && timer < 0)
             {
-                AudioManager.Instance.PlayMaximizePlatform(gameObject);
+                emitterMin.Stop();
+                emitterMax.EventReference = AudioManager.Instance.maximizePlatform;
+                emitterMax.Play();
+                /*AudioManager.Instance.PlayMaximizePlatform(gameObject);*/
                 targetPos = scaleRef.transform.position;
                 targetScale = scaleRef.transform.lossyScale;
                 targetSpeed = scaleUpSpeed;

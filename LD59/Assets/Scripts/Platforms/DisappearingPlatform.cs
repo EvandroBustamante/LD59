@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class DisappearingPlatform : Platform
@@ -10,8 +11,13 @@ public class DisappearingPlatform : Platform
     private float timer;
     private bool isAlive = true;
 
+    private StudioEventEmitter emitterMin;
+    private StudioEventEmitter emitterMax;
+
     private void Awake()
     {
+        emitterMin = GetComponent<StudioEventEmitter>();
+        emitterMax = GetComponent<StudioEventEmitter>();
         sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
 
@@ -26,7 +32,10 @@ public class DisappearingPlatform : Platform
 
             if (isAlive && timer < 0)
             {
-                AudioManager.Instance.PlayMinimizePlatform(gameObject);
+                emitterMax.Stop();
+                emitterMin.EventReference = AudioManager.Instance.minimizePlatform;
+                emitterMin.Play();
+                /*AudioManager.Instance.PlayMinimizePlatform(gameObject);*/
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.2f);
                 col.enabled = false;
                 timer = timeDead;
@@ -34,7 +43,10 @@ public class DisappearingPlatform : Platform
             }
             else if (!isAlive && timer < 0)
             {
-                AudioManager.Instance.PlayMaximizePlatform(gameObject);
+                emitterMin.Stop();
+                emitterMax.EventReference = AudioManager.Instance.maximizePlatform;
+                emitterMax.Play();
+                /*AudioManager.Instance.PlayMaximizePlatform(gameObject);*/
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
                 col.enabled = true;
                 timer = timeAlive;
