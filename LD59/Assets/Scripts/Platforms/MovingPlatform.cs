@@ -25,7 +25,7 @@ public class MovingPlatform : Platform
             {
                 currentTarget = pointA;
 
-                if (Vector3.Distance(transform.position, pointA.position) < 0.5f)
+                if (Vector3.Distance(transform.position, pointA.position) < 0.015f)
                 {
                     goingA = false;
                 }
@@ -34,7 +34,7 @@ public class MovingPlatform : Platform
             {
                 currentTarget = pointB;
 
-                if(Vector3.Distance(transform.position, pointB.position) < 0.5f)
+                if(Vector3.Distance(transform.position, pointB.position) < 0.015f)
                 {
                     goingA = true;
                 }
