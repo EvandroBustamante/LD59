@@ -259,10 +259,16 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>45</value>
+			<value>8</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>2</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{e153a852-cc40-411a-a3c2-ca82c28eb70a}">
