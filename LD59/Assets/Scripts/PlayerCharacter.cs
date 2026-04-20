@@ -26,6 +26,7 @@ public class PlayerCharacter : MonoBehaviour
     public float respawnDelay = 0.2f;
     public float deathCameraShakeDuration = 0.3f;
     public float deathCameraShakeStrength = 1f;
+    public bool isTutorial = false;
 
     [Header("Script References")]
     public Transform groundCheck1;
@@ -100,6 +101,8 @@ public class PlayerCharacter : MonoBehaviour
         cameraFollow.followTarget = cameraTarget;
         currentSignal = SignalType.NoSignal;
         batterySr.enabled = false;
+
+        if (isTutorial) animator.SetTrigger("intro");
     }
 
     private void Update()
@@ -207,7 +210,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void SignalLogic()
     {
-        if(isInWeakSignal && isInStrongSignal)
+        if(isInStrongSignal)
         {
             currentSignal = SignalType.StrongSignal;
         }
