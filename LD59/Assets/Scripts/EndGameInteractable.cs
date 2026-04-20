@@ -47,8 +47,8 @@ public class EndGameInteractable : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         blueScreen.SetActive(true);
-        AudioManager.Instance.SetMusicVolume(0);
-        AudioManager.Instance.SetSFXVolume(0);
+        AudioManager.Instance.StopAll();
+        AudioManager.Instance.PlayBlueScreen();
 
         yield return new WaitForSeconds(3f);
 
