@@ -19,7 +19,6 @@ public class Antenna : MonoBehaviour
 
     public void SignalToEnable(int index)
     {
-        Debug.Log("signal To Enable");
         t = 0f;
         foreach (var signal in unlockableSignals)
         {
