@@ -289,6 +289,7 @@ RectTransform:
   - {fileID: 6585137945510376663}
   - {fileID: 8116329198665407301}
   - {fileID: 753142056275478761}
+  - {fileID: 351359856806447183}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -374,6 +375,7 @@ GameObject:
   - component: {fileID: 8419953181538068242}
   - component: {fileID: 4489477978256714555}
   - component: {fileID: 6991661827342941620}
+  - component: {fileID: 5616878325343968284}
   m_Layer: 5
   m_Name: Pause_Button
   m_TagString: Untagged
@@ -485,16 +487,52 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6991661827342941620}
-        m_TargetAssemblyTypeName: ToggleObject, Assembly-CSharp
-        m_MethodName: toggle
-        m_Mode: 2
+        m_TargetAssemblyTypeName: UIToggleTween, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2479714495852126198}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4235776005966276404}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7270254654714162917}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5616878325343968284}
+        m_TargetAssemblyTypeName: UIToggleTween, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &4489477978256714555
 MonoBehaviour:
@@ -534,6 +572,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b35a6f66be46745afe4dc3891f307d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  target: {fileID: 2479714495852126198}
+  rectTransform: {fileID: 6585137945510376663}
+  duration: 0.1
+--- !u!114 &5616878325343968284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452375431873667641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b35a6f66be46745afe4dc3891f307d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIToggleTween
+  target: {fileID: 6047613398554009001}
+  rectTransform: {fileID: 3212830925244326928}
+  duration: 0
 --- !u!1 &1471089994934753277
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +751,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1059,9 +1115,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -145.07086, y: -51.388916}
+  m_AnchoredPosition: {x: 1.000061, y: 18.029839}
   m_SizeDelta: {x: -292.1418, y: -138.8375}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &587877121480550780
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1336,7 +1392,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1504,6 +1560,7 @@ MonoBehaviour:
   weakDash: {fileID: -1091048658, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   strongDash: {fileID: 319896427, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   dashIcon: {fileID: 2175717573493418645}
+  dashText: {fileID: 2285619605612752016}
   noSignal: {fileID: 1259821630, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   weakSignal: {fileID: 397520195, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   strongSignal: {fileID: -1680510796, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
@@ -1958,6 +2015,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8665947260278291983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351359856806447183}
+  - component: {fileID: 8676679087668543724}
+  - component: {fileID: 4959211406985794842}
+  m_Layer: 5
+  m_Name: CRT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &351359856806447183
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665947260278291983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2931998636572138306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8676679087668543724
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665947260278291983}
+  m_CullTransparentMesh: 1
+--- !u!114 &4959211406985794842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665947260278291983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.31764707}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -160968071060620172, guid: 3684b4de2a836294ba06358f3f49be2b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8680513973144751137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,6 +2410,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4019097509449591939, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
+      propertyPath: m_Name
+      value: DoubleJumpIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 4339069581727126277, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2502,6 +2638,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2192457097966420320}
+    - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIToggleTween, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6319829274459322630, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2541,13 +2705,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7531554161273919685, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2192457097966420320}
   m_SourcePrefab: {fileID: 100100000, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
 --- !u!224 &2500304297978989632 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3617808388868256338, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
   m_PrefabInstance: {fileID: 1191153777898438162}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8647650808560150231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7531554161273919685, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+  m_PrefabInstance: {fileID: 1191153777898438162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2192457097966420320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647650808560150231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b35a6f66be46745afe4dc3891f307d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIToggleTween
+  target: {fileID: 8665947260278291983}
+  rectTransform: {fileID: 351359856806447183}
+  duration: 0
 --- !u!1001 &2011545617478043901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2642,7 +2829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2666,7 +2853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: toggle
+      value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2674,7 +2861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToggleObject, Assembly-CSharp
+      value: UIToggleTween, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2691,10 +2878,10 @@ PrefabInstance:
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 4235776005966276404}
+      objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2766,6 +2953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b35a6f66be46745afe4dc3891f307d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleObject
+  target: {fileID: 4235776005966276404}
+  rectTransform: {fileID: 3434442335133502557}
+  duration: 0.1
 --- !u!1001 &6866899401570383306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2868,7 +3058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2892,7 +3082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: toggle
+      value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2900,7 +3090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToggleObject, Assembly-CSharp
+      value: UIToggleTween, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2909,10 +3099,10 @@ PrefabInstance:
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 7270254654714162917}
+      objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2979,6 +3169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b35a6f66be46745afe4dc3891f307d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleObject
+  target: {fileID: 7270254654714162917}
+  rectTransform: {fileID: 8059529649238913028}
+  duration: 0.1
 --- !u!224 &7888381372507244440 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3617808388868256338, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
@@ -3011,6 +3204,10 @@ PrefabInstance:
     - target: {fileID: 2953618381197768236, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019097509449591939, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
+      propertyPath: m_Name
+      value: DashIcon
       objectReference: {fileID: 0}
     - target: {fileID: 4339069581727126277, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3141,6 +3338,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7144468386640427227, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
   m_PrefabInstance: {fileID: 9012926532078679867}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2285619605612752016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7110196477137869739, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
+  m_PrefabInstance: {fileID: 9012926532078679867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &6889749513996349527 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2488544734810867564, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}

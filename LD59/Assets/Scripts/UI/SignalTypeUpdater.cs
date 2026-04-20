@@ -20,6 +20,7 @@ public class SignalTypeUpdater : MonoBehaviour
     public Sprite weakDash;
     public Sprite strongDash;
     public Image dashIcon;
+    public TextMeshProUGUI dashText;
 
     [Header("Signal Feedback")]
     public Sprite noSignal;
@@ -62,6 +63,7 @@ public class SignalTypeUpdater : MonoBehaviour
 
         dashButton.sprite = unavailableButton;
         dashIcon.sprite = noDash;
+        dashText.text = "Dash";
 
         feedbackImage.sprite = noSignal;
     }
@@ -73,6 +75,7 @@ public class SignalTypeUpdater : MonoBehaviour
 
         dashButton.sprite = availableButton;
         dashIcon.sprite = weakDash;
+        dashText.text = "Dash";
 
         feedbackImage.sprite = weakSignal;
     }
@@ -84,6 +87,7 @@ public class SignalTypeUpdater : MonoBehaviour
 
         dashButton.sprite = availableButton;
         dashIcon.sprite = strongDash;
+        dashText.text = "Super dash!";
 
         feedbackImage.sprite = strongSignal;
     }
