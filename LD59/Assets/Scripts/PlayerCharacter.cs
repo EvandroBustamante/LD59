@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerCharacter : MonoBehaviour
     public float timeToDie = 3;
     [Tooltip("Grace period when the player can still jump after jumping off a cliff")] public float hangTime = 0.2f;
     public float cameraAheadAmount = 5f;
+    public float deathAnimationJumpPower = 2f;
+    public float deathAnimationDuration = 3f;
 
     [Header("Script References")]
     public Transform groundCheck1;
@@ -57,6 +60,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private bool inDeathTimer = false;
     [HideInInspector] public float dieTimer = 0f;
+    private bool isRespawning = false;
 
     private Chunk currentChunk;
     private Transform respawnPoint;
@@ -65,11 +69,14 @@ public class PlayerCharacter : MonoBehaviour
     private SpriteRenderer sr;
     private InputManager inputManager;
     private Animator animator;
+    private Collider2D col;
 
     [Header("VFX")]
     public ParticleSystem jumpVFX;
     public ParticleSystem runVFX;
     public float runVFXinterval;
+    public ParticleSystem deathArroba;
+    public ParticleSystem deathDust;
 
     private float runVFXtimer;
 
@@ -80,6 +87,7 @@ public class PlayerCharacter : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         inputManager = GetComponent<InputManager>();
         animator = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
 
         cameraFollow.followTarget = cameraTarget;
         currentSignal = SignalType.NoSignal;
@@ -373,12 +381,49 @@ public class PlayerCharacter : MonoBehaviour
         cameraFollow.chunkBounds = newChunk.chunkBound;
     }
 
-    private void RespawnPlayer()
+    private IEnumerator RespawnPlayer()
     {
+        if (isRespawning) yield break;
+
+        animator.SetTrigger("death");
+        col.enabled = false;
+        DisablePlayerControls();
+        cameraFollow.canFollow = false;
+        isRespawning = true;
+        float randomFinalX = Random.Range(transform.position.x - 3, transform.position.x + 3);
+        Vector3 finalPos = new Vector3(randomFinalX, transform.position.y - 3, transform.position.z);
+        transform.DOJump(finalPos, deathAnimationJumpPower, 1, deathAnimationDuration);
+        GameObject arrobaParticle = Instantiate(deathArroba.gameObject, transform.position, Quaternion.identity);
+        Destroy(arrobaParticle, 3f);
+
+        GameObject dustParticle = Instantiate(deathDust.gameObject, transform.position, Quaternion.identity);
+        Destroy(dustParticle, 3f);
+
+        yield return new WaitForSeconds(3f);
+
+        animator.SetTrigger("respawn");
+        rb.linearVelocity = new Vector3(0, 0, 0);
+        cameraFollow.canFollow = true;
         transform.position = respawnPoint.transform.position;
+        col.enabled = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        EnablePlayerControls();
+        isRespawning = false;
         currentSignal = SignalType.NoSignal;
         dieTimer = timeToDie;
         inDeathTimer = false;
+    }
+
+    public void EnablePlayerControls()
+    {
+        canMove = true;
+    }
+
+    public void DisablePlayerControls()
+    {
+        canMove = false;
     }
 
     private IEnumerator NoSignalTimer()
@@ -397,18 +442,20 @@ public class PlayerCharacter : MonoBehaviour
             yield return null;
         }
 
-        RespawnPlayer();
+        StartCoroutine(RespawnPlayer());
     }
 
     private void CheckIfSquished()
     {
+        if (!canMove) return;
+
         bool groundBelow = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
         bool groundAbove = Physics2D.OverlapCircle(headCheck.position, .0025f, groundLayer);
 
         if (groundBelow && groundAbove)
         {
             Debug.Log("squished!");
-            RespawnPlayer();
+            StartCoroutine(RespawnPlayer());
         }
     }
 
@@ -442,7 +489,7 @@ public class PlayerCharacter : MonoBehaviour
 
         if (collision.CompareTag("Death"))
         {
-            RespawnPlayer();
+            StartCoroutine(RespawnPlayer());
         }
     }
 

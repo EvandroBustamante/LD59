@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
 
     [HideInInspector] public Transform followTarget;
     [HideInInspector] public BoxCollider2D chunkBounds;
+    [HideInInspector] public bool canFollow = true;
     private Vector3 followTrasform;
     private float cameraHeight;
     private float cameraWidth;
@@ -21,17 +22,20 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        followTrasform = followTarget.position;
+        if (canFollow)
+        {
+            followTrasform = followTarget.position;
 
-        if (followTrasform.x - cameraWidth / 2 < chunkBounds.transform.position.x - (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2)
-            followTrasform.x = chunkBounds.transform.position.x - (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2 + cameraWidth / 2;
-        if (followTrasform.x + cameraWidth / 2 > chunkBounds.transform.position.x + (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2)
-            followTrasform.x = chunkBounds.transform.position.x + (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2 - cameraWidth / 2;
-        if (followTrasform.y - cameraHeight / 2 < chunkBounds.transform.position.y - (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2)
-            followTrasform.y = chunkBounds.transform.position.y - (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2 + cameraHeight / 2;
-        if (followTrasform.y + cameraHeight / 2 > chunkBounds.transform.position.y + (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2)
-            followTrasform.y = chunkBounds.transform.position.y + (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2 - cameraHeight / 2;
+            if (followTrasform.x - cameraWidth / 2 < chunkBounds.transform.position.x - (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2)
+                followTrasform.x = chunkBounds.transform.position.x - (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2 + cameraWidth / 2;
+            if (followTrasform.x + cameraWidth / 2 > chunkBounds.transform.position.x + (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2)
+                followTrasform.x = chunkBounds.transform.position.x + (chunkBounds.size.x * chunkBounds.transform.localScale.x) / 2 - cameraWidth / 2;
+            if (followTrasform.y - cameraHeight / 2 < chunkBounds.transform.position.y - (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2)
+                followTrasform.y = chunkBounds.transform.position.y - (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2 + cameraHeight / 2;
+            if (followTrasform.y + cameraHeight / 2 > chunkBounds.transform.position.y + (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2)
+                followTrasform.y = chunkBounds.transform.position.y + (chunkBounds.size.y * chunkBounds.transform.localScale.y) / 2 - cameraHeight / 2;
 
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, followTrasform.x, followSpeed * Time.deltaTime), Mathf.Lerp(transform.position.y, followTrasform.y, followSpeed * Time.deltaTime), transform.position.z);
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, followTrasform.x, followSpeed * Time.deltaTime), Mathf.Lerp(transform.position.y, followTrasform.y, followSpeed * Time.deltaTime), transform.position.z);
+        }
     }
 }
