@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.Collections;
 
 public class Antenna : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Antenna : MonoBehaviour
 
     public void SignalToEnable(int index)
     {
-        
+        t = 0f;
         foreach (var signal in unlockableSignals)
         {
             signal.gameObject.SetActive(false);
@@ -30,15 +31,17 @@ public class Antenna : MonoBehaviour
         antenaTemp.GetComponent<AntennaSignal>().weakSignal.GetComponent<CircleCollider2D>().radius = 0;
         antenaTemp.GetComponent<AntennaSignal>().strongSignal.GetComponent<CircleCollider2D>().radius = 0;
 
-
     }
 
     private void Update()
     {
-        antenaTemp.GetComponent<AntennaSignal>().weakSignal.GetComponent<CircleCollider2D>().radius = Mathf.Lerp(0, maxWeakRadius, t);
-        antenaTemp.GetComponent<AntennaSignal>().strongSignal.GetComponent<CircleCollider2D>().radius = Mathf.Lerp(0, maxStrongRadius, t);
-
-        t += speed * Time.deltaTime;
-
+        if (t < 1)
+        {
+            antenaTemp.GetComponent<AntennaSignal>().weakSignal.GetComponent<CircleCollider2D>().radius = Mathf.Lerp(0, maxWeakRadius, t);
+            antenaTemp.GetComponent<AntennaSignal>().strongSignal.GetComponent<CircleCollider2D>().radius = Mathf.Lerp(0, maxStrongRadius, t);
+            t += speed * Time.deltaTime;
+        }
     }
+
+    
 }
