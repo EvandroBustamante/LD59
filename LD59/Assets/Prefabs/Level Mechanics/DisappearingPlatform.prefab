@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16ce4a11753a4347b43c94637123032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisappearingPlatform
-  worldDelay: 2
+  worldDelay: 0
   canWork: 0
-  timeAlive: 5
+  timeAlive: 3
   timeDead: 3
 --- !u!114 &7534167291095684570
 MonoBehaviour:

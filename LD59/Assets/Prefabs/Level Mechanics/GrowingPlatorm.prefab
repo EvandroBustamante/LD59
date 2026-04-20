@@ -152,13 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a36fcaba256a5a4fbeaa4cb0e6f13b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrowingPlatform
-  worldDelay: 2
+  worldDelay: 0
   canWork: 0
-  timeAlive: 3
+  timeAlive: 2
   timeDead: 3
   scaleRef: {fileID: 4169952709925137434}
-  scaleUpSpeed: 1
-  scaleDownSpeed: 1
+  scaleUpSpeed: 5
+  scaleDownSpeed: 5
 --- !u!114 &6279982809091732881
 MonoBehaviour:
   m_ObjectHideFlags: 0
