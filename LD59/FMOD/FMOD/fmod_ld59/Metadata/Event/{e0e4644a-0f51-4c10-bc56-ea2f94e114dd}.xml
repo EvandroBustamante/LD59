@@ -65,7 +65,20 @@
 			<destination>{84349cb7-ab6a-4a1b-b238-177e6850d349}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{064175b2-3841-4c52-b42d-90c9230785a1}" />
+	<object class="EventAutomatableProperties" id="{064175b2-3841-4c52-b42d-90c9230785a1}">
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
+		<property name="voiceStealing">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>4</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{dd635a60-fabd-433b-ae0b-f0efe59f9f8a}" />
 	<object class="MarkerTrack" id="{6de6a47e-b6aa-4219-91f3-59408a045316}" />
 	<object class="MarkerTrack" id="{604836d5-7342-4648-a4f8-ad7bd33a8d2e}" />
@@ -144,9 +157,6 @@
 		</property>
 	</object>
 	<object class="EventMixerGroup" id="{b369cd65-bd28-4205-b8e4-d97ad7f316be}">
-		<property name="volume">
-			<value>-5</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -217,7 +227,7 @@
 	<object class="MixerBusEffectChain" id="{8c135744-12be-4d97-ba69-095acd1b0765}">
 		<relationship name="effects">
 			<destination>{5fc08186-4389-4da2-ad77-552185a18de1}</destination>
-			<destination>{e46b79f2-02ca-4302-9eca-5d42fffbeb1f}</destination>
+			<destination>{658ef398-be08-437b-b2ab-103557c9985b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{522579a1-7e58-4133-b27c-12bf310025cb}" />
@@ -254,22 +264,13 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{5fc08186-4389-4da2-ad77-552185a18de1}" />
-	<object class="SpatialiserEffect" id="{e46b79f2-02ca-4302-9eca-5d42fffbeb1f}">
-		<property name="minimumDistance">
+	<object class="ProxyEffect" id="{658ef398-be08-437b-b2ab-103557c9985b}">
+		<property name="inputFormat">
 			<value>0</value>
 		</property>
-		<property name="maximumDistance">
-			<value>8</value>
-		</property>
-		<property name="overrideRange">
-			<value>true</value>
-		</property>
-		<property name="extentMode">
-			<value>1</value>
-		</property>
-		<property name="soundSize">
-			<value>2</value>
-		</property>
+		<relationship name="preset">
+			<destination>{c57819c1-3a07-4492-b205-43696c1178ec}</destination>
+		</relationship>
 	</object>
 	<object class="AutomationPoint" id="{e153a852-cc40-411a-a3c2-ca82c28eb70a}">
 		<property name="position">
