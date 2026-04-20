@@ -153,3 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speedX: 0
   speedY: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
