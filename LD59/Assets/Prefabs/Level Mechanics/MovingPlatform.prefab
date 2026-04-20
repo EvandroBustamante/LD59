@@ -151,10 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5553bbe54331a244bbc5337963ee2acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
+  worldDelay: 2
+  canWork: 0
   pointA: {fileID: 8931403454669712600}
   pointB: {fileID: 8735623862693606989}
   speed: 0.5
-  worldDelay: 2
+  isPlatform: 1
 --- !u!1 &4479467443485891389
 GameObject:
   m_ObjectHideFlags: 0

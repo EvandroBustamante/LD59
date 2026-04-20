@@ -20,6 +20,13 @@ public class AudioManager : MonoBehaviour
     public EventReference spawn;
     public EventReference death;
 
+    [Header("Scenario")]
+    public EventReference movingPlatform;
+    public EventReference movingSaw;
+    public EventReference cascadingPlatform;
+    public EventReference maximizePlatform;
+    public EventReference minimizePlatform;
+
     private VCA musicVCA;
     private VCA sfxVCA;
 
@@ -98,6 +105,50 @@ public class AudioManager : MonoBehaviour
     public void PlayCharacterDeath()
     {
         RuntimeManager.PlayOneShot(death);
+    }
+
+    #endregion
+
+    #region Scenario
+
+    public void PlayMovingPlatform(GameObject objectToAttach)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(movingPlatform);
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, objectToAttach);
+        eventInstance.start();
+        eventInstance.release();
+    }
+
+    public void PlayMovingSaw(GameObject objectToAttach)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(movingSaw);
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, objectToAttach);
+        eventInstance.start();
+        eventInstance.release();
+    }
+
+    public void PlayCascadingPlatform(GameObject objectToAttach)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(cascadingPlatform);
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, objectToAttach);
+        eventInstance.start();
+        eventInstance.release();
+    }
+
+    public void PlayMaximizePlatform(GameObject objectToAttach)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(maximizePlatform);
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, objectToAttach);
+        eventInstance.start();
+        eventInstance.release();
+    }
+
+    public void PlayMinimizePlatform(GameObject objectToAttach)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(minimizePlatform);
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, objectToAttach);
+        eventInstance.start();
+        eventInstance.release();
     }
 
     #endregion

@@ -258,7 +258,6 @@ public class PlayerCharacter : MonoBehaviour
             if (jumpTimer < 0)
             {
                 //Jump ended through duration:
-                isJumping = false;
                 yield break;
             }
 
@@ -269,7 +268,6 @@ public class PlayerCharacter : MonoBehaviour
         {
             //Jump ended through cancel input:
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
-            isJumping = false;
             pressedJumpKey = false;
             yield break;
         }
@@ -297,7 +295,6 @@ public class PlayerCharacter : MonoBehaviour
             if(doubleJumpTimer < 0)
             {
                 //Jump ended through duration:
-                isDoubleJumping = false;
                 yield break;
             }
 
@@ -308,7 +305,6 @@ public class PlayerCharacter : MonoBehaviour
         {
             //Jump ended through cancel input:
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * .5f);
-            isDoubleJumping = false;
             pressedJumpKey = false;
             yield break;
         }

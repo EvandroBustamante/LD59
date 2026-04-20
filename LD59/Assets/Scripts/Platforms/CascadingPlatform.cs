@@ -46,6 +46,7 @@ public class CascadingPlatform : Platform
             for (int i = 0; i < platformsToToggle.Count; i++)
             {
                 platformsToToggle[i].SetActive(true);
+                AudioManager.Instance.PlayCascadingPlatform(platformsToToggle[i]);
                 yield return new WaitForSeconds(delayBetweenActivations);
             }
             yield break;
@@ -55,6 +56,7 @@ public class CascadingPlatform : Platform
             for (int i = platformsToToggle.Count - 1; i >= 0; i--)
             {
                 platformsToToggle[i].SetActive(false);
+                AudioManager.Instance.PlayCascadingPlatform(platformsToToggle[i]);
                 yield return new WaitForSeconds(delayBetweenDeactivations);
             }
         }
