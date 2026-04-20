@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacter
   moveSpeed: 1.8
+  moveSpeedOutOfSignal: 1.3
   jumpHeight: 2.2
   jumpDuration: 0.15
   doubleJumpHeight: 2
