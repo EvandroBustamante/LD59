@@ -36,8 +36,7 @@ public class ShadowTrail : MonoBehaviour
         trailPartRenderer.flipX = GetComponent<SpriteRenderer>().flipX;
         trailPartRenderer.sprite = GetComponent<SpriteRenderer>().sprite;
         trailPartRenderer.sortingOrder = 1;
-        trailPart.transform.position = transform.position;
-        trailPart.transform.localScale = transform.localScale; 
+        trailPart.transform.position = transform.position; 
         trailParts.Add(trailPart);
 
         StartCoroutine(FadeTrailPart(trailPartRenderer));
