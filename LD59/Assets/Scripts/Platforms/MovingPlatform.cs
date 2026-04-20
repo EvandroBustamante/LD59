@@ -25,7 +25,7 @@ public class MovingPlatform : Platform
             {
                 currentTarget = pointA;
 
-                if (Vector3.Distance(transform.position, pointA.position) < 0.015f)
+                if (Vector3.Distance(transform.position, pointA.position) < 0.15f)
                 {
                     goingA = false;
                 }
@@ -34,13 +34,13 @@ public class MovingPlatform : Platform
             {
                 currentTarget = pointB;
 
-                if(Vector3.Distance(transform.position, pointB.position) < 0.015f)
+                if(Vector3.Distance(transform.position, pointB.position) < 0.15f)
                 {
                     goingA = true;
                 }
             }
-            
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, currentTarget.transform.position.x, speed * Time.deltaTime), Mathf.Lerp(transform.position.y, currentTarget.transform.position.y, speed * Time.deltaTime), transform.position.z);
+
+            transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, speed * Time.deltaTime);
         }
     }
 
