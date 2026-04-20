@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: 58aec57fcf6801846ae4ecd315942635
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3465081038526067429
+    second: hazards_icons_0
+  - first:
+      213: -4148746011539012708
+    second: hazards_icons_1
+  - first:
+      213: 8744070265920095050
+    second: hazards_icons_2
+  - first:
+      213: 9096072544448395322
+    second: hazards_icons_3
+  - first:
+      213: -7613237295399292064
+    second: hazards_icons_4
+  - first:
+      213: -132721057514660443
+    second: hazards_icons_5
+  - first:
+      213: -5518556993795106211
+    second: hazards_icons_6
+  - first:
+      213: -5956561895107921684
+    second: hazards_icons_7
+  - first:
+      213: 1547705803830789526
+    second: hazards_icons_8
+  - first:
+      213: -3338567707999057151
+    second: hazards_icons_9
+  - first:
+      213: -2824536871691357923
+    second: hazards_icons_10
+  - first:
+      213: 7534248795772853602
+    second: hazards_icons_11
+  - first:
+      213: 7584037818930605378
+    second: hazards_icons_12
+  - first:
+      213: 1165666551727147232
+    second: hazards_icons_13
+  - first:
+      213: -3746430188740132159
+    second: hazards_icons_14
+  - first:
+      213: 1417416324663004999
+    second: hazards_icons_15
+  - first:
+      213: -7002632783924133878
+    second: hazards_icons_16
+  - first:
+      213: -9108524241362533583
+    second: hazards_icons_17
+  - first:
+      213: 6145123456045410859
+    second: hazards_icons_18
+  - first:
+      213: 7948665566698848494
+    second: hazards_icons_19
+  - first:
+      213: -2760229074790797756
+    second: hazards_icons_20
+  - first:
+      213: -6125552821604182864
+    second: hazards_icons_21
+  - first:
+      213: -6716264815349249178
+    second: hazards_icons_22
+  - first:
+      213: -4471974707642642285
+    second: hazards_icons_23
+  - first:
+      213: 781007031746639370
+    second: hazards_icons_24
+  - first:
+      213: 348732367925735638
+    second: hazards_icons_25
+  - first:
+      213: 3223765944682591185
+    second: hazards_icons_26
+  - first:
+      213: 4099036744891331872
+    second: hazards_icons_27
+  - first:
+      213: -4576569908307962899
+    second: hazards_icons_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hazards_icons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 209
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d46bc772f89efc0800000000000000
+      internalID: -3465081038526067429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 208
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9306e6cb71bc66c0800000000000000
+      internalID: -4148746011539012708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 207
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43093b249d295970800000000000000
+      internalID: 8744070265920095050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 211
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38b70f39cdbb3e70800000000000000
+      internalID: 9096072544448395322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 192
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06338f83409585690800000000000000
+      internalID: -7613237295399292064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_5
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 207
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5addf90c6ea782ef0800000000000000
+      internalID: -132721057514660443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_6
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 175
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a581817a52a63b0800000000000000
+      internalID: -5518556993795106211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_7
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 192
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8f67ff38a065da0800000000000000
+      internalID: -5956561895107921684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_8
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 136
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695052e7a3e8a7510800000000000000
+      internalID: 1547705803830789526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_9
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 161
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b402aab560ba1d0800000000000000
+      internalID: -3338567707999057151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_10
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 161
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11f7d32eaa3dc8d0800000000000000
+      internalID: -2824536871691357923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d94719c570f8860800000000000000
+      internalID: 7534248795772853602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24dac70e63aef3960800000000000000
+      internalID: 7584037818930605378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e840468d874d2010800000000000000
+      internalID: 1165666551727147232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_14
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 146
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c24850c791020cc0800000000000000
+      internalID: -3746430188740132159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74fc06233acaba310800000000000000
+      internalID: 1417416324663004999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0082b5a596a1de90800000000000000
+      internalID: -7002632783924133878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_17
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 116
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1334d852675089180800000000000000
+      internalID: -9108524241362533583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 116
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ae18a993dd74550800000000000000
+      internalID: 6145123456045410859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_19
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 111
+        width: 46
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0c67518355f4e60800000000000000
+      internalID: 7948665566698848494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_20
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 116
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44ea362e742b1b9d0800000000000000
+      internalID: -2760229074790797756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_21
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 116
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4146fc92aadfaa0800000000000000
+      internalID: -6125552821604182864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_22
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 96
+        width: 46
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b47a71cb80bc2a0800000000000000
+      internalID: -6716264815349249178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_23
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 81
+        width: 46
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 390dd6a62ba50f1c0800000000000000
+      internalID: -4471974707642642285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_24
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 85
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a063756e1c1b6da00800000000000000
+      internalID: 781007031746639370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_25
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 85
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0f4efad32f6d400800000000000000
+      internalID: 348732367925735638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_26
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 85
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3bec3eb0e1dbc20800000000000000
+      internalID: 3223765944682591185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_27
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 85
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025758ca334b2e830800000000000000
+      internalID: 4099036744891331872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hazards_icons_28
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 70
+        width: 46
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3df858ae1cc70c0800000000000000
+      internalID: -4576569908307962899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      hazards_icons_0: -3465081038526067429
+      hazards_icons_1: -4148746011539012708
+      hazards_icons_10: -2824536871691357923
+      hazards_icons_11: 7534248795772853602
+      hazards_icons_12: 7584037818930605378
+      hazards_icons_13: 1165666551727147232
+      hazards_icons_14: -3746430188740132159
+      hazards_icons_15: 1417416324663004999
+      hazards_icons_16: -7002632783924133878
+      hazards_icons_17: -9108524241362533583
+      hazards_icons_18: 6145123456045410859
+      hazards_icons_19: 7948665566698848494
+      hazards_icons_2: 8744070265920095050
+      hazards_icons_20: -2760229074790797756
+      hazards_icons_21: -6125552821604182864
+      hazards_icons_22: -6716264815349249178
+      hazards_icons_23: -4471974707642642285
+      hazards_icons_24: 781007031746639370
+      hazards_icons_25: 348732367925735638
+      hazards_icons_26: 3223765944682591185
+      hazards_icons_27: 4099036744891331872
+      hazards_icons_28: -4576569908307962899
+      hazards_icons_3: 9096072544448395322
+      hazards_icons_4: -7613237295399292064
+      hazards_icons_5: -132721057514660443
+      hazards_icons_6: -5518556993795106211
+      hazards_icons_7: -5956561895107921684
+      hazards_icons_8: 1547705803830789526
+      hazards_icons_9: -3338567707999057151
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
