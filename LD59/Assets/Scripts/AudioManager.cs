@@ -22,6 +22,9 @@ public class AudioManager : MonoBehaviour
     public EventReference dashWeak;
     public EventReference spawn;
     public EventReference death;
+    public EventReference spawnInGame;
+    public EventReference signalLost;
+    public EventReference clickMail;
 
     [Header("Scenario")]
     public EventReference movingPlatform;
@@ -31,6 +34,7 @@ public class AudioManager : MonoBehaviour
     public EventReference minimizePlatform;
     public EventReference trashCan;
     public EventReference bullet;
+    public EventReference pickableWifi;
 
     private VCA musicVCA;
     private VCA sfxVCA;
@@ -150,6 +154,21 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(death);
     }
 
+    public void PlaySpawnInGame()
+    {
+        RuntimeManager.PlayOneShot(spawnInGame);
+    }
+
+    public void PlaySignalLost()
+    {
+        RuntimeManager.PlayOneShot(signalLost);
+    }
+
+    public void PlayClickMail()
+    {
+        RuntimeManager.PlayOneShot(clickMail);
+    }
+
     #endregion
 
     #region Scenario
@@ -192,6 +211,11 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(eventInstance, objectToAttach);
         eventInstance.start();
         eventInstance.release();
+    }
+
+    public void PlayPickableWifi()
+    {
+        RuntimeManager.PlayOneShot(pickableWifi);
     }
 
     #endregion

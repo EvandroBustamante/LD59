@@ -155,12 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051a9149ba6b02e48b4425b5cb08fbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CascadingPlatform
-  worldDelay: 2
+  worldDelay: 0
   canWork: 0
-  delayBetweenActivations: 0.2
-  delayBetweenDeactivations: 0.2
-  timeAlive: 5
-  timeDead: 5
+  delayBetweenActivations: 1
+  delayBetweenDeactivations: 1
+  timeAlive: 3
+  timeDead: 3
   platformsToToggle:
   - {fileID: 1089461717356914986}
   - {fileID: 6733357256255764224}
