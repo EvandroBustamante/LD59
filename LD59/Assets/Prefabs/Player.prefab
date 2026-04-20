@@ -160,7 +160,8 @@ MonoBehaviour:
   dashCooldown: 0.2
   timeToDie: 4
   hangTime: 0.1
-  cameraAheadAmount: 0
+  cameraAheadAmount: 0.5
+  cameraAheadSpeed: 1
   deathAnimationJumpPower: 2
   deathAnimationDuration: 2
   groundCheck1: {fileID: 5610858317805808661}

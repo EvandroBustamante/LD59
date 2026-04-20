@@ -20,6 +20,7 @@ public class PlayerCharacter : MonoBehaviour
     public float timeToDie = 3;
     [Tooltip("Grace period when the player can still jump after jumping off a cliff")] public float hangTime = 0.2f;
     public float cameraAheadAmount = 5f;
+    public float cameraAheadSpeed = 1f;
     public float deathAnimationJumpPower = 2f;
     public float deathAnimationDuration = 3f;
 
@@ -190,10 +191,10 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         //Move camera target:
-        if (inputManager.moveInput.x != 0)
-        {
-            cameraTarget.localPosition = new Vector3((cameraAheadAmount * inputManager.moveInput.x), cameraTarget.localPosition.y, cameraTarget.localPosition.z);
-        }
+        int facingValue = 0;
+        if (isFacingRight) facingValue = 1;
+        else if (!isFacingRight) facingValue = -1;
+        Vector3 targetPos = new Vector3((cameraAheadAmount * facingValue), cameraTarget.localPosition.y, cameraTarget.localPosition.z);
     }
 
     private void SignalLogic()
