@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 4061600595806820782}
   - component: {fileID: 1778397632159939055}
   - component: {fileID: 2059085456028686641}
+  - component: {fileID: 6429701930626886355}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -345,6 +346,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShadowTrail
   lifetime: 0.15
   _color: {r: 0, g: 0.28235295, b: 0.6862745, a: 1}
+--- !u!81 &6429701930626886355
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247313780520433978}
+  m_Enabled: 1
 --- !u!1 &3001146161900659729
 GameObject:
   m_ObjectHideFlags: 0
