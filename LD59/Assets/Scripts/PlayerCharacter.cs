@@ -23,6 +23,8 @@ public class PlayerCharacter : MonoBehaviour
     public float cameraAheadSpeed = 1f;
     public float deathAnimationJumpPower = 2f;
     public float deathAnimationDuration = 3f;
+    public float deathCameraShakeDuration = 0.3f;
+    public float deathCameraShakeStrength = 1f;
 
     [Header("Script References")]
     public Transform groundCheck1;
@@ -31,6 +33,7 @@ public class PlayerCharacter : MonoBehaviour
     public LayerMask groundLayer;
     public Transform cameraTarget;
     public CameraFollow cameraFollow;
+    public SpriteRenderer batterySr;
 
     private bool canMove = true;
     private bool isFacingRight = true;
@@ -71,6 +74,7 @@ public class PlayerCharacter : MonoBehaviour
     private InputManager inputManager;
     private Animator animator;
     private Collider2D col;
+    private Animator batteryAnimator;
 
     [Header("VFX")]
     public ParticleSystem jumpVFX;
@@ -89,9 +93,11 @@ public class PlayerCharacter : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
+        batteryAnimator = batterySr.GetComponent<Animator>();
 
         cameraFollow.followTarget = cameraTarget;
         currentSignal = SignalType.NoSignal;
+        batterySr.enabled = false;
     }
 
     private void Update()
@@ -391,11 +397,18 @@ public class PlayerCharacter : MonoBehaviour
         DisablePlayerControls();
         cameraFollow.canFollow = false;
         isRespawning = true;
+        batteryAnimator.SetTrigger("respawn");
+        batterySr.enabled = false;
+
+        //Character falling:
         float randomFinalX = Random.Range(transform.position.x - 3, transform.position.x + 3);
         Vector3 finalPos = new Vector3(randomFinalX, transform.position.y - 3, transform.position.z);
         transform.DOJump(finalPos, deathAnimationJumpPower, 1, deathAnimationDuration);
         GameObject arrobaParticle = Instantiate(deathArroba.gameObject, transform.position, Quaternion.identity);
         Destroy(arrobaParticle, 3f);
+
+        //Camera shake:
+        Camera.main.transform.DOShakePosition(deathCameraShakeDuration, deathCameraShakeStrength);
 
         GameObject dustParticle = Instantiate(deathDust.gameObject, transform.position, Quaternion.identity);
         Destroy(dustParticle, 3f);
@@ -432,10 +445,18 @@ public class PlayerCharacter : MonoBehaviour
         inDeathTimer = true;
         dieTimer = timeToDie;
 
+        batterySr.enabled = true;
+        batteryAnimator.SetTrigger("death");
+
+        float animSpeed = 1 / timeToDie;
+        batteryAnimator.SetFloat("animSpeed", animSpeed);
+
         while (dieTimer > 0)
         {
             if(currentSignal != SignalType.NoSignal)
             {
+                batterySr.enabled = false;
+                batteryAnimator.SetTrigger("respawn");
                 yield break;
             }
 
