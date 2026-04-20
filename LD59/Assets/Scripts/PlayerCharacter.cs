@@ -7,6 +7,7 @@ public class PlayerCharacter : MonoBehaviour
 {
     [Header("Player Attributes")]
     public float moveSpeed = 5f;
+    public float moveSpeedOutOfSignal = 4.5f;
     public float jumpHeight = 5f;
     public float jumpDuration = 1f;
     public float doubleJumpHeight = 3f;
@@ -64,6 +65,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool canInteract = false;
     private BoostSignalInteractable interactableRef;
     private ChangeSceneInteractable tutorialInteractRef;
+    private EndGameInteractable endGameRef;
 
     private bool inDeathTimer = false;
     [HideInInspector] public float dieTimer = 0f;
@@ -123,7 +125,8 @@ public class PlayerCharacter : MonoBehaviour
         if (!canMove || isDashing) return;
 
         //Horizontal move:
-        rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
+        if(currentSignal != SignalType.NoSignal) rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
+        else rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeedOutOfSignal, rb.linearVelocity.y);
 
         //Check for ground:
         isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .025f, groundLayer);
@@ -261,6 +264,14 @@ public class PlayerCharacter : MonoBehaviour
             if (inputManager.isInteracting)
             {
                 tutorialInteractRef.Interact();
+            }
+        }
+
+        if(canInteract && endGameRef != null)
+        {
+            if (inputManager.isInteracting)
+            {
+                endGameRef.TriggerEnd();
             }
         }
     }
@@ -543,6 +554,12 @@ public class PlayerCharacter : MonoBehaviour
         {
             canInteract = true;
             tutorialInteractRef = collision.GetComponent<ChangeSceneInteractable>();
+        }
+
+        if (collision.CompareTag("Interactable") && collision.GetComponent<EndGameInteractable>())
+        {
+            canInteract = true;
+            endGameRef = collision.GetComponent<EndGameInteractable>();
         }
 
         if (collision.CompareTag("Death"))
