@@ -252,9 +252,8 @@ MonoBehaviour:
   canWork: 0
   pointA: {fileID: 599677100016359911}
   pointB: {fileID: 6504484712483282604}
-  speed: 0.5
+  speed: 0.7
   isPlatform: 0
-  emitter: {fileID: 0}
 --- !u!114 &2402407379876543462
 MonoBehaviour:
   m_ObjectHideFlags: 0
