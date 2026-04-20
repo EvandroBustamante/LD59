@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 4489477978256714555}
   - component: {fileID: 6991661827342941620}
   - component: {fileID: 5616878325343968284}
+  - component: {fileID: 7521987984816206606}
   m_Layer: 5
   m_Name: Pause_Button
   m_TagString: Untagged
@@ -401,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 27.624512, y: 9.457199}
+  m_AnchoredPosition: {x: 27.624512, y: 9.457214}
   m_SizeDelta: {x: 53.249, y: 13.9144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2606147735260421976
@@ -590,6 +591,21 @@ MonoBehaviour:
   target: {fileID: 6047613398554009001}
   rectTransform: {fileID: 3212830925244326928}
   duration: 0
+--- !u!114 &7521987984816206606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452375431873667641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d3191c000886541aade2ec331ad63f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseButton
+  musicSlider: {fileID: 3686629578492076282}
+  sfxSlider: {fileID: 8277583405014318512}
+  quitButton: {fileID: 4382029060728761190}
 --- !u!1 &1471089994934753277
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,9 +765,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6946180622950823455}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 1
-  m_Value: 5
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1390,9 +1406,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4781172766113588431}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 1
-  m_Value: 5
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1787,7 +1803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 86.534, y: 10.8}
+  m_AnchoredPosition: {x: 86.534, y: 10.799988}
   m_SizeDelta: {x: 81.2103, y: 23.6803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &731077872872452564
@@ -2382,6 +2398,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3617808388868256338, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
   m_PrefabInstance: {fileID: 302461651264056607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4382029060728761190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4099005127982614137, guid: 650523c1a28b36e4bbe6aece817f0644, type: 3}
+  m_PrefabInstance: {fileID: 302461651264056607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &882711659653694151
 PrefabInstance:
   m_ObjectHideFlags: 0

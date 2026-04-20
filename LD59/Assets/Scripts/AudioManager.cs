@@ -1,6 +1,7 @@
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine;
+using FMOD;
 
 public class AudioManager : MonoBehaviour
 {
@@ -66,6 +67,16 @@ public class AudioManager : MonoBehaviour
     public void PlayAmbience()
     {
         RuntimeManager.PlayOneShot(computerAmbience);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVCA.setVolume(volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxVCA.setVolume(volume);
     }
 
     #endregion

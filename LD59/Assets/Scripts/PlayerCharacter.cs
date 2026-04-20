@@ -399,6 +399,7 @@ public class PlayerCharacter : MonoBehaviour
         isRespawning = true;
         batteryAnimator.SetTrigger("respawn");
         batterySr.enabled = false;
+        AudioManager.Instance.PlayCharacterDeath();
 
         //Character falling:
         float randomFinalX = Random.Range(transform.position.x - 3, transform.position.x + 3);
@@ -420,6 +421,7 @@ public class PlayerCharacter : MonoBehaviour
         cameraFollow.canFollow = true;
         transform.position = respawnPoint.transform.position;
         col.enabled = true;
+        AudioManager.Instance.PlayCharacterSpawn();
 
         yield return new WaitForSeconds(0.5f);
 
