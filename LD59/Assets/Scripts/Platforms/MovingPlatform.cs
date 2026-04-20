@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
@@ -6,9 +7,15 @@ public class MovingPlatform : Platform
     public Transform pointA;
     public Transform pointB;
     public float speed;
+    public bool isPlatform;
 
     private bool goingA = false;
     private Transform currentTarget;
+
+    private void Awake()
+    {
+        StartCoroutine(DelayStart());
+    }
 
     private void Update()
     {
@@ -34,6 +41,20 @@ public class MovingPlatform : Platform
             }
             
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, currentTarget.transform.position.x, speed * Time.deltaTime), Mathf.Lerp(transform.position.y, currentTarget.transform.position.y, speed * Time.deltaTime), transform.position.z);
+        }
+    }
+
+    private IEnumerator DelayStart()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        if (isPlatform)
+        {
+            AudioManager.Instance.PlayMovingPlatform(gameObject);
+        }
+        else
+        {
+            AudioManager.Instance.PlayMovingSaw(gameObject);
         }
     }
 

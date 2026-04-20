@@ -114,3 +114,38 @@ MonoBehaviour:
       Data3: -1504871774
       Data4: 155880798
     Path: event:/sfx/main_char/sfx_char_death
+  movingPlatform:
+    Guid:
+      Data1: -521903030
+      Data2: 1276120913
+      Data3: 803886780
+      Data4: -585834092
+    Path: event:/sfx/scenario/sfx_scenario_platform_move
+  movingSaw:
+    Guid:
+      Data1: 245725567
+      Data2: 1130745626
+      Data3: 289585329
+      Data4: 650162935
+    Path: event:/sfx/scenario/sfx_scenario_saw_lp
+  cascadingPlatform:
+    Guid:
+      Data1: 344879280
+      Data2: 1246861828
+      Data3: -1536094832
+      Data4: 1538443698
+    Path: event:/sfx/scenario/sfx_scenario_platform_cascada
+  maximizePlatform:
+    Guid:
+      Data1: 1123185983
+      Data2: 1110762780
+      Data3: 1123602873
+      Data4: 508333742
+    Path: event:/sfx/scenario/sfx_scenario_platform_maximize
+  minimizePlatform:
+    Guid:
+      Data1: 1286069968
+      Data2: 1128274169
+      Data3: -802503254
+      Data4: 1080929806
+    Path: event:/sfx/scenario/sfx_scenario_platform_minimize

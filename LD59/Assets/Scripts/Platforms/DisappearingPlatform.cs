@@ -26,6 +26,7 @@ public class DisappearingPlatform : Platform
 
             if (isAlive && timer < 0)
             {
+                AudioManager.Instance.PlayMinimizePlatform(gameObject);
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.2f);
                 col.enabled = false;
                 timer = timeDead;
@@ -33,6 +34,7 @@ public class DisappearingPlatform : Platform
             }
             else if (!isAlive && timer < 0)
             {
+                AudioManager.Instance.PlayMaximizePlatform(gameObject);
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
                 col.enabled = true;
                 timer = timeAlive;

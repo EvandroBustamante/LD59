@@ -38,6 +38,7 @@ public class GrowingPlatform : Platform
 
             if (isAlive && timer < 0)
             {
+                AudioManager.Instance.PlayMinimizePlatform(gameObject);
                 targetPos = originalPos;
                 targetScale = originalScale;
                 targetSpeed = scaleDownSpeed;
@@ -46,6 +47,7 @@ public class GrowingPlatform : Platform
             }
             else if (!isAlive && timer < 0)
             {
+                AudioManager.Instance.PlayMaximizePlatform(gameObject);
                 targetPos = scaleRef.transform.position;
                 targetScale = scaleRef.transform.lossyScale;
                 targetSpeed = scaleUpSpeed;
