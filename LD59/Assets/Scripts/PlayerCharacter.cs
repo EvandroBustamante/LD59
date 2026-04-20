@@ -23,6 +23,8 @@ public class PlayerCharacter : MonoBehaviour
     public float cameraAheadSpeed = 1f;
     public float deathAnimationJumpPower = 2f;
     public float deathAnimationDuration = 3f;
+    public float deathCameraShakeDuration = 0.3f;
+    public float deathCameraShakeStrength = 1f;
 
     [Header("Script References")]
     public Transform groundCheck1;
@@ -398,11 +400,15 @@ public class PlayerCharacter : MonoBehaviour
         batteryAnimator.SetTrigger("respawn");
         batterySr.enabled = false;
 
+        //Character falling:
         float randomFinalX = Random.Range(transform.position.x - 3, transform.position.x + 3);
         Vector3 finalPos = new Vector3(randomFinalX, transform.position.y - 3, transform.position.z);
         transform.DOJump(finalPos, deathAnimationJumpPower, 1, deathAnimationDuration);
         GameObject arrobaParticle = Instantiate(deathArroba.gameObject, transform.position, Quaternion.identity);
         Destroy(arrobaParticle, 3f);
+
+        //Camera shake:
+        Camera.main.transform.DOShakePosition(deathCameraShakeDuration, deathCameraShakeStrength);
 
         GameObject dustParticle = Instantiate(deathDust.gameObject, transform.position, Quaternion.identity);
         Destroy(dustParticle, 3f);

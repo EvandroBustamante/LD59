@@ -165,6 +165,8 @@ MonoBehaviour:
   cameraAheadSpeed: 1
   deathAnimationJumpPower: 2
   deathAnimationDuration: 1.5
+  deathCameraShakeDuration: 0.4
+  deathCameraShakeStrength: 0.2
   groundCheck1: {fileID: 5610858317805808661}
   groundCheck2: {fileID: 3516406508718303198}
   headCheck: {fileID: 5098523913655118371}
