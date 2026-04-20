@@ -434,7 +434,7 @@ public class PlayerCharacter : MonoBehaviour
         cameraFollow.canFollow = true;
         transform.position = respawnPoint.transform.position;
         col.enabled = true;
-        AudioManager.Instance.PlayCharacterSpawn();
+        AudioManager.Instance.PlaySpawnInGame();
 
         yield return new WaitForSeconds(0.5f);
 
@@ -499,6 +499,16 @@ public class PlayerCharacter : MonoBehaviour
     public void AudioSteps()
     {
         AudioManager.Instance.PlayCharacterSteps();
+    }
+
+    public void IntroSpawnAudio()
+    {
+        AudioManager.Instance.PlayCharacterSpawn();
+    }
+
+    public void IntroClickMailAudio()
+    {
+        AudioManager.Instance.PlayClickMail();
     }
 
     public bool GetIsGrounded()
