@@ -12,4 +12,9 @@ public class Chunk : MonoBehaviour
 
         GetComponent<SpriteRenderer>().enabled = false;
     }
+
+    public void DisableChunk()
+    {
+        chunkBound.enabled = false;
+    }
 }

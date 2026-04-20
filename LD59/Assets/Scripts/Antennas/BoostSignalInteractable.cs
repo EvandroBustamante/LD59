@@ -5,6 +5,7 @@ public class BoostSignalInteractable : MonoBehaviour
 {
     public List<Antenna> antennasToBoost;
     [Tooltip("Must be in order, ex: element 2 on this list will afect antenna 2 on that list")]public List<int> signalIndexsToEnable;
+    public ChunkWall wallToEnable;
 
     private int indexListCounter;
     private bool hasInteracted = false;
@@ -21,6 +22,8 @@ public class BoostSignalInteractable : MonoBehaviour
     {
         if (!hasInteracted)
         {
+            wallToEnable.EnableWall();
+
             indexListCounter = 0;
             foreach (Antenna antenna in antennasToBoost)
             {
@@ -29,6 +32,7 @@ public class BoostSignalInteractable : MonoBehaviour
             }
             interactHitbox.enabled = false;
             sr.color = new Color(1, 0, 0, 0.5f);
+
             hasInteracted = true;
         }
     }
