@@ -827,7 +827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Ismail
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 782bfcb67d1b8da4892149c9e2efc7b3, type: 2}
   m_sharedMaterial: {fileID: 2275026937062325534, guid: 782bfcb67d1b8da4892149c9e2efc7b3, type: 2}
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5090813466892973811, guid: 5f91bc012a043a84abbd92054bd9867b, type: 3}
+  m_Sprite: {fileID: -5122268860803075122, guid: 8cf91b5af383c614b8e04d09be85e211, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
