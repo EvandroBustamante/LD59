@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using DG.Tweening;
 
@@ -7,6 +6,7 @@ public class PlayerCharacter : MonoBehaviour
 {
     [Header("Player Attributes")]
     public float moveSpeed = 5f;
+    public float moveSpeedOutOfSignal = 4.5f;
     public float jumpHeight = 5f;
     public float jumpDuration = 1f;
     public float doubleJumpHeight = 3f;
@@ -64,6 +64,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool canInteract = false;
     private BoostSignalInteractable interactableRef;
     private ChangeSceneInteractable tutorialInteractRef;
+    private EndGameInteractable endGameRef;
 
     private bool inDeathTimer = false;
     [HideInInspector] public float dieTimer = 0f;
@@ -123,7 +124,8 @@ public class PlayerCharacter : MonoBehaviour
         if (!canMove || isDashing) return;
 
         //Horizontal move:
-        rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
+        if(currentSignal != SignalType.NoSignal) rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeed, rb.linearVelocity.y);
+        else rb.linearVelocity = new Vector2(inputManager.moveInput.x * moveSpeedOutOfSignal, rb.linearVelocity.y);
 
         //Check for ground:
         isGrounded = Physics2D.OverlapCircle(groundCheck1.position, .025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .025f, groundLayer);
@@ -261,6 +263,14 @@ public class PlayerCharacter : MonoBehaviour
             if (inputManager.isInteracting)
             {
                 tutorialInteractRef.Interact();
+            }
+        }
+
+        if(canInteract && endGameRef != null)
+        {
+            if (inputManager.isInteracting)
+            {
+                endGameRef.TriggerEnd();
             }
         }
     }
@@ -434,7 +444,7 @@ public class PlayerCharacter : MonoBehaviour
         cameraFollow.canFollow = true;
         transform.position = respawnPoint.transform.position;
         col.enabled = true;
-        AudioManager.Instance.PlayCharacterSpawn();
+        AudioManager.Instance.PlaySpawnInGame();
 
         yield return new WaitForSeconds(0.5f);
 
@@ -486,7 +496,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (!canMove) return;
 
-        bool groundBelow = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) || Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
+        bool groundBelow = Physics2D.OverlapCircle(groundCheck1.position, .0025f, groundLayer) && Physics2D.OverlapCircle(groundCheck2.position, .1f, groundLayer);
         bool groundAbove = Physics2D.OverlapCircle(headCheck.position, .0025f, groundLayer);
 
         if (groundBelow && groundAbove)
@@ -499,6 +509,16 @@ public class PlayerCharacter : MonoBehaviour
     public void AudioSteps()
     {
         AudioManager.Instance.PlayCharacterSteps();
+    }
+
+    public void IntroSpawnAudio()
+    {
+        AudioManager.Instance.PlayCharacterSpawn();
+    }
+
+    public void IntroClickMailAudio()
+    {
+        AudioManager.Instance.PlayClickMail();
     }
 
     public bool GetIsGrounded()
@@ -533,6 +553,12 @@ public class PlayerCharacter : MonoBehaviour
         {
             canInteract = true;
             tutorialInteractRef = collision.GetComponent<ChangeSceneInteractable>();
+        }
+
+        if (collision.CompareTag("Interactable") && collision.GetComponent<EndGameInteractable>())
+        {
+            canInteract = true;
+            endGameRef = collision.GetComponent<EndGameInteractable>();
         }
 
         if (collision.CompareTag("Death"))

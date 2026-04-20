@@ -22,6 +22,7 @@ public class BoostSignalInteractable : MonoBehaviour
     {
         if (!hasInteracted)
         {
+            AudioManager.Instance.PlayPickableWifi();
             if(wallToEnable != null) wallToEnable.EnableWall();
 
             indexListCounter = 0;

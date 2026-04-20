@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 735854027f0f5c64297ea9a73792e7f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4525025457661057079
+    second: PartyGoblins_Logo2_0
+  - first:
+      213: -7845857410445186268
+    second: PartyGoblins_Logo2_1
+  - first:
+      213: 3582551261309732281
+    second: PartyGoblins_Logo2_2
+  - first:
+      213: 7101190820693044604
+    second: PartyGoblins_Logo2_3
+  - first:
+      213: 2540641914463309412
+    second: PartyGoblins_Logo2_4
+  - first:
+      213: 6021275311477423734
+    second: PartyGoblins_Logo2_5
+  - first:
+      213: 4373704791554543872
+    second: PartyGoblins_Logo2_6
+  - first:
+      213: 9210574989598959047
+    second: PartyGoblins_Logo2_7
+  - first:
+      213: 657838402969093074
+    second: PartyGoblins_Logo2_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 762
+        height: 807
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7389c7bddae1cce30800000000000000
+      internalID: 4525025457661057079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_1
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 234
+        width: 1212
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42b6c0c114aed1390800000000000000
+      internalID: -7845857410445186268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_2
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 63
+        width: 126
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b58ef71467c7b130800000000000000
+      internalID: 3582551261309732281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_3
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 63
+        width: 134
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d6cad7d6f7c8260800000000000000
+      internalID: 7101190820693044604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_4
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 61
+        width: 132
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ecd0d3c5c224320800000000000000
+      internalID: 2540641914463309412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_5
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 61
+        width: 97
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ef0736efddf8350800000000000000
+      internalID: 6021275311477423734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_6
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 60
+        width: 56
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0015805c55582bc30800000000000000
+      internalID: 4373704791554543872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 59
+        width: 127
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5a420472982df70800000000000000
+      internalID: 9210574989598959047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PartyGoblins_Logo2_8
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 58
+        width: 116
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d34598ca8c112900800000000000000
+      internalID: 657838402969093074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PartyGoblins_Logo2_0: 4525025457661057079
+      PartyGoblins_Logo2_1: -7845857410445186268
+      PartyGoblins_Logo2_2: 3582551261309732281
+      PartyGoblins_Logo2_3: 7101190820693044604
+      PartyGoblins_Logo2_4: 2540641914463309412
+      PartyGoblins_Logo2_5: 6021275311477423734
+      PartyGoblins_Logo2_6: 4373704791554543872
+      PartyGoblins_Logo2_7: 9210574989598959047
+      PartyGoblins_Logo2_8: 657838402969093074
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

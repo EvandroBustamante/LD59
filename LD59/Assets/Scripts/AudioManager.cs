@@ -22,6 +22,9 @@ public class AudioManager : MonoBehaviour
     public EventReference dashWeak;
     public EventReference spawn;
     public EventReference death;
+    public EventReference spawnInGame;
+    public EventReference signalLost;
+    public EventReference clickMail;
 
     [Header("Scenario")]
     public EventReference movingPlatform;
@@ -31,6 +34,9 @@ public class AudioManager : MonoBehaviour
     public EventReference minimizePlatform;
     public EventReference trashCan;
     public EventReference bullet;
+    public EventReference pickableWifi;
+    public EventReference uiClick;
+    public EventReference blueScreen;
 
     private VCA musicVCA;
     private VCA sfxVCA;
@@ -39,6 +45,7 @@ public class AudioManager : MonoBehaviour
     public EventInstance tutorialMusicInstance;
     public EventInstance ambienceInstance;
 
+    public bool isTutorial = false;
 
 
     private void Awake()
@@ -58,10 +65,16 @@ public class AudioManager : MonoBehaviour
         musicVCA = RuntimeManager.GetVCA("vca:/vca_music_fader");
         sfxVCA = RuntimeManager.GetVCA("vca:/vca_sfx_fader");
 
-        PlayMusicMenu();
+        StopAll();
+        if (!isTutorial) PlayMusicMenu();
+        else PlayMusicTutorial();
         PlayAmbience();
     }
 
+    public void StopAll()
+    {
+        RuntimeManager.GetBus("Bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 
     #region Music
 
@@ -150,6 +163,21 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(death);
     }
 
+    public void PlaySpawnInGame()
+    {
+        RuntimeManager.PlayOneShot(spawnInGame);
+    }
+
+    public void PlaySignalLost()
+    {
+        RuntimeManager.PlayOneShot(signalLost);
+    }
+
+    public void PlayClickMail()
+    {
+        RuntimeManager.PlayOneShot(clickMail);
+    }
+
     #endregion
 
     #region Scenario
@@ -192,6 +220,21 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(eventInstance, objectToAttach);
         eventInstance.start();
         eventInstance.release();
+    }
+
+    public void PlayPickableWifi()
+    {
+        RuntimeManager.PlayOneShot(pickableWifi);
+    }
+
+    public void PlayClickUI()
+    {
+        RuntimeManager.PlayOneShot(uiClick);
+    }
+
+    public void PlayBlueScreen()
+    {
+        RuntimeManager.PlayOneShot(blueScreen);
     }
 
     #endregion
