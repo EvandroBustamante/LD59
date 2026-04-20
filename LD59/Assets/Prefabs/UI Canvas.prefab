@@ -1560,6 +1560,7 @@ MonoBehaviour:
   weakDash: {fileID: -1091048658, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   strongDash: {fileID: 319896427, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   dashIcon: {fileID: 2175717573493418645}
+  dashText: {fileID: 2285619605612752016}
   noSignal: {fileID: 1259821630, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   weakSignal: {fileID: 397520195, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   strongSignal: {fileID: -1680510796, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
@@ -2409,6 +2410,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4019097509449591939, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
+      propertyPath: m_Name
+      value: DoubleJumpIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 4339069581727126277, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3200,6 +3205,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4019097509449591939, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
+      propertyPath: m_Name
+      value: DashIcon
+      objectReference: {fileID: 0}
     - target: {fileID: 4339069581727126277, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3329,6 +3338,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7144468386640427227, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
   m_PrefabInstance: {fileID: 9012926532078679867}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2285619605612752016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7110196477137869739, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
+  m_PrefabInstance: {fileID: 9012926532078679867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &6889749513996349527 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2488544734810867564, guid: 366d3766a79ea0646b26068935bb7d88, type: 3}
