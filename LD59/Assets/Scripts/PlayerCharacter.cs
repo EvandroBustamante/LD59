@@ -49,6 +49,9 @@ public class PlayerCharacter : MonoBehaviour
     private bool dashReset = false;
     private ShadowTrail shadowTrail;
 
+    private bool isInWeakSignal = false;
+    private bool isInStrongSignal = false;
+
     private bool canInteract = false;
     private BoostSignalInteractable interactableRef;
 
@@ -187,13 +190,26 @@ public class PlayerCharacter : MonoBehaviour
 
     private void SignalLogic()
     {
+        if(isInWeakSignal && isInStrongSignal)
+        {
+            currentSignal = SignalType.StrongSignal;
+        }
+        else if(isInWeakSignal && !isInStrongSignal)
+        {
+            currentSignal = SignalType.WeakSignal;
+        }
+        else if (!isInWeakSignal && !isInStrongSignal)
+        {
+            currentSignal = SignalType.NoSignal;
+        }
+
         switch (currentSignal)
         {
             case SignalType.NoSignal:
                 canDoubleJump = false;
                 hasWeakDash = false;
                 hasStrongDash = false;
-                if(!inDeathTimer) StartCoroutine(NoSignalTimer());
+                if (!inDeathTimer) StartCoroutine(NoSignalTimer());
                 break;
             case SignalType.WeakSignal:
                 canDoubleJump = false;
@@ -391,7 +407,7 @@ public class PlayerCharacter : MonoBehaviour
 
         if (groundBelow && groundAbove)
         {
-            //Debug.Log("squished!");
+            Debug.Log("squished!");
             RespawnPlayer();
         }
     }
@@ -408,13 +424,14 @@ public class PlayerCharacter : MonoBehaviour
             UpdateCurrentChunk(collision.GetComponent<Chunk>());
         }
 
-        if (collision.CompareTag("WeakSignal") && currentSignal == SignalType.NoSignal)
+        if (collision.CompareTag("WeakSignal"))
         {
-            currentSignal = SignalType.WeakSignal;
+            isInWeakSignal = true;
         }
-        else if(collision.CompareTag("StrongSignal") && currentSignal == SignalType.WeakSignal)
+
+        if(collision.CompareTag("StrongSignal"))
         {
-            currentSignal = SignalType.StrongSignal;
+            isInStrongSignal = true;
         }
 
         if (collision.CompareTag("Interactable") && collision.GetComponent<BoostSignalInteractable>())
@@ -431,19 +448,32 @@ public class PlayerCharacter : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("StrongSignal") && currentSignal == SignalType.StrongSignal)
+        if (collision.CompareTag("WeakSignal"))
         {
-            currentSignal = SignalType.WeakSignal;
+            isInWeakSignal = false;
         }
-        
-        if(collision.CompareTag("WeakSignal") && currentSignal == SignalType.WeakSignal)
+
+        if (collision.CompareTag("StrongSignal"))
         {
-            currentSignal = SignalType.NoSignal;
+            isInStrongSignal = false;
         }
 
         if (collision.CompareTag("Interactable"))
         {
             canInteract = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("WeakSignal"))
+        {
+            isInWeakSignal = true;
+        }
+
+        if (collision.CompareTag("StrongSignal"))
+        {
+            isInStrongSignal = true;
         }
     }
 }
