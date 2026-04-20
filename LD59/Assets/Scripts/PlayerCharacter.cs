@@ -522,6 +522,11 @@ public class PlayerCharacter : MonoBehaviour
         {
             isInStrongSignal = true;
         }
+
+        if (collision.CompareTag("Chunk"))
+        {
+            UpdateCurrentChunk(collision.GetComponent<Chunk>());
+        }
     }
 }
 
