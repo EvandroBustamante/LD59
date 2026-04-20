@@ -62,7 +62,14 @@
 			<destination>{84349cb7-ab6a-4a1b-b238-177e6850d349}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{c72852ea-50db-4628-bf47-f25a308fc6c4}" />
+	<object class="EventAutomatableProperties" id="{c72852ea-50db-4628-bf47-f25a308fc6c4}">
+		<property name="maxVoices">
+			<value>3</value>
+		</property>
+		<property name="voiceStealing">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{39dc452f-5e19-422c-ac2d-d7fb29d0a42d}" />
 	<object class="Timeline" id="{c374b31c-3766-4fd7-b8ee-2d95e2aaed6f}">
 		<property name="isProxyEnabled">
@@ -99,11 +106,14 @@
 	<object class="MixerBusEffectChain" id="{e2c1f217-2983-497d-9d2d-fa718534be87}">
 		<relationship name="effects">
 			<destination>{058f91f3-7d13-4e7c-a2ba-56031ec29d5a}</destination>
-			<destination>{a9297f40-23ec-4f53-8073-73d7f9108c1a}</destination>
+			<destination>{fa8164f4-c566-4ba6-a38b-2b2fce6be014}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{36b8e30f-2133-4b32-95f1-269b0668304c}" />
 	<object class="SingleSound" id="{afdb364a-ff26-4bf5-8341-8b182b668ebe}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{a7890ab0-3701-4d86-a767-9bdfdf39befa}</destination>
 		</relationship>
@@ -113,7 +123,20 @@
 	</object>
 	<object class="MixerBusFader" id="{bd3bb205-3980-41b8-85f1-c3d93738060e}" />
 	<object class="MixerBusFader" id="{058f91f3-7d13-4e7c-a2ba-56031ec29d5a}" />
-	<object class="SpatialiserEffect" id="{a9297f40-23ec-4f53-8073-73d7f9108c1a}" />
+	<object class="SpatialiserEffect" id="{fa8164f4-c566-4ba6-a38b-2b2fce6be014}">
+		<property name="maximumDistance">
+			<value>2</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="RandomizerModulator" id="{a7890ab0-3701-4d86-a767-9bdfdf39befa}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

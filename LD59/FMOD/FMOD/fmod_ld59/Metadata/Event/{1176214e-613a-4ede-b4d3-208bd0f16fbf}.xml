@@ -62,7 +62,14 @@
 			<destination>{84349cb7-ab6a-4a1b-b238-177e6850d349}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{dcacbf8a-243f-4971-8622-fe2e2e98b83b}" />
+	<object class="EventAutomatableProperties" id="{dcacbf8a-243f-4971-8622-fe2e2e98b83b}">
+		<property name="maxVoices">
+			<value>3</value>
+		</property>
+		<property name="voiceStealing">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{fdffb74c-bb6a-4885-b7cc-d3f1915febee}" />
 	<object class="Timeline" id="{e7fc97c4-10a3-4ac0-9e94-8828953529e1}">
 		<property name="isProxyEnabled">
@@ -99,11 +106,14 @@
 	<object class="MixerBusEffectChain" id="{eef915f3-45f5-4591-8157-254c3f057ab6}">
 		<relationship name="effects">
 			<destination>{c825569e-03f0-49f7-9cfd-5a99ef69f6f3}</destination>
-			<destination>{e5ea6162-6c8f-4b22-8224-037674955c46}</destination>
+			<destination>{d067e58f-647b-4635-bd97-95dcd04382ca}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4fef9b8c-63ba-4f5e-a37d-c2871d1e62fb}" />
 	<object class="MultiSound" id="{0541b06a-751f-4736-a01e-d38e3bda041d}">
+		<property name="volume">
+			<value>-80</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{4436073b-f257-44d0-b88d-7d52c2f2e461}</destination>
 		</relationship>
@@ -116,7 +126,14 @@
 	</object>
 	<object class="MixerBusFader" id="{0c432400-b574-4e0c-84de-cd7a19c8d8d9}" />
 	<object class="MixerBusFader" id="{c825569e-03f0-49f7-9cfd-5a99ef69f6f3}" />
-	<object class="SpatialiserEffect" id="{e5ea6162-6c8f-4b22-8224-037674955c46}" />
+	<object class="ProxyEffect" id="{d067e58f-647b-4635-bd97-95dcd04382ca}">
+		<property name="inputFormat">
+			<value>0</value>
+		</property>
+		<relationship name="preset">
+			<destination>{c57819c1-3a07-4492-b205-43696c1178ec}</destination>
+		</relationship>
+	</object>
 	<object class="RandomizerModulator" id="{4436073b-f257-44d0-b88d-7d52c2f2e461}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

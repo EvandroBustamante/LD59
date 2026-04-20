@@ -59,7 +59,14 @@
 			<destination>{84349cb7-ab6a-4a1b-b238-177e6850d349}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{e2b77bc2-f1ca-433f-92b8-b3e056a95ad8}" />
+	<object class="EventAutomatableProperties" id="{e2b77bc2-f1ca-433f-92b8-b3e056a95ad8}">
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
+		<property name="voiceStealing">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{dbe1f6df-34ea-40b3-bc12-4933a2cb6456}" />
 	<object class="GroupTrack" id="{0ad1f112-3c09-411f-ba3e-48eea126c1db}">
 		<relationship name="modules">
@@ -108,6 +115,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{74599c44-10eb-4bc3-bf75-9036fd704ea7}">
+		<property name="volume">
+			<value>6</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -124,7 +134,7 @@
 	<object class="MixerBusEffectChain" id="{a90ce162-87aa-4edc-8589-91685cd84ce9}">
 		<relationship name="effects">
 			<destination>{fc455bf9-ca7f-4fda-8fa5-6cc814c422a9}</destination>
-			<destination>{fe52d0e4-d903-4497-891a-34a3505e3341}</destination>
+			<destination>{2bc0cf14-3d94-44e9-baea-2dcbebfb5b48}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6ab6c871-c48c-41d6-aa8c-139a491d2a80}" />
@@ -159,7 +169,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{ed0eaa32-8a49-4474-88fa-a6bb977312a2}" />
 	<object class="MixerBusFader" id="{fc455bf9-ca7f-4fda-8fa5-6cc814c422a9}" />
-	<object class="SpatialiserEffect" id="{fe52d0e4-d903-4497-891a-34a3505e3341}" />
+	<object class="SpatialiserEffect" id="{2bc0cf14-3d94-44e9-baea-2dcbebfb5b48}">
+		<property name="maximumDistance">
+			<value>5</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{578a8341-eb60-4a12-ae03-952abf81666e}">
 		<property name="position">
 			<value>0.315</value>
