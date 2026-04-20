@@ -64,6 +64,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool canInteract = false;
     private BoostSignalInteractable interactableRef;
     private ChangeSceneInteractable tutorialInteractRef;
+    private EndGameInteractable endGameRef;
 
     private bool inDeathTimer = false;
     [HideInInspector] public float dieTimer = 0f;
@@ -261,6 +262,14 @@ public class PlayerCharacter : MonoBehaviour
             if (inputManager.isInteracting)
             {
                 tutorialInteractRef.Interact();
+            }
+        }
+
+        if(canInteract && endGameRef != null)
+        {
+            if (inputManager.isInteracting)
+            {
+                endGameRef.TriggerEnd();
             }
         }
     }
@@ -543,6 +552,12 @@ public class PlayerCharacter : MonoBehaviour
         {
             canInteract = true;
             tutorialInteractRef = collision.GetComponent<ChangeSceneInteractable>();
+        }
+
+        if (collision.CompareTag("Interactable") && collision.GetComponent<EndGameInteractable>())
+        {
+            canInteract = true;
+            endGameRef = collision.GetComponent<EndGameInteractable>();
         }
 
         if (collision.CompareTag("Death"))
