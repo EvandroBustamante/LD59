@@ -60,10 +60,10 @@ MonoBehaviour:
     Path: event:/music/mus_tutorial_lp
   computerAmbience:
     Guid:
-      Data1: 1955133948
-      Data2: 1167070152
-      Data3: -1553671263
-      Data4: -1313168589
+      Data1: 232951248
+      Data2: 1266834362
+      Data3: -240866166
+      Data4: -1612220449
     Path: event:/sfx/ambience/amb_computer_lp
   steps:
     Guid:

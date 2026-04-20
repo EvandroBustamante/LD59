@@ -1,15 +1,40 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SignalTypeUpdater : MonoBehaviour
 {
-    public PlayerCharacter player;
+    [Header("Buttons")]
+    public Sprite availableButton;
+    public Sprite unavailableButton;
+    public Image doubleJumpButton;
+    public Image dashButton;
 
-    private TextMeshProUGUI myText;
+    [Header("DoubleJump")]
+    public Sprite doubleJumpAvailable;
+    public Sprite doubleJumpUnavailable;
+    public Image doubleJumpIcon;
+
+    [Header("Dashed")]
+    public Sprite noDash;
+    public Sprite weakDash;
+    public Sprite strongDash;
+    public Image dashIcon;
+
+    [Header("Signal Feedback")]
+    public Sprite noSignal;
+    public Sprite weakSignal;
+    public Sprite strongSignal;
+    public Image feedbackImage;
+
+    [Header("Time Text")]
+    public TextMeshProUGUI myText;
+
+    private PlayerCharacter player;
 
     private void Start()
     {
-        myText = GetComponent<TextMeshProUGUI>();
+        player = FindAnyObjectByType<PlayerCharacter>();
     }
 
     private void Update()
@@ -17,17 +42,49 @@ public class SignalTypeUpdater : MonoBehaviour
         switch (player.currentSignal)
         {
             case SignalType.NoSignal:
-                myText.text = "NO SIGNAL! -> " + player.dieTimer;
-                myText.color = Color.red;
+                UpdateNoSignal();
                 break;
             case SignalType.WeakSignal:
-                myText.text = "WEAK SIGNAL";
-                myText.color = Color.yellow;
+                UpdateWeakSignal();
                 break;
             case SignalType.StrongSignal:
-                myText.text = "STRONG SIGNAL";
-                myText.color = Color.green;
+                UpdateStrongSignal();
                 break;
         }
+
+        myText.text = System.DateTime.Now.ToString("hh:mm");
+    }
+
+    private void UpdateNoSignal()
+    {
+        doubleJumpButton.sprite = unavailableButton;
+        doubleJumpIcon.sprite = doubleJumpUnavailable;
+
+        dashButton.sprite = unavailableButton;
+        dashIcon.sprite = noDash;
+
+        feedbackImage.sprite = noSignal;
+    }
+
+    private void UpdateWeakSignal()
+    {
+        doubleJumpButton.sprite = unavailableButton;
+        doubleJumpIcon.sprite = doubleJumpUnavailable;
+
+        dashButton.sprite = availableButton;
+        dashIcon.sprite = weakDash;
+
+        feedbackImage.sprite = weakSignal;
+    }
+
+    private void UpdateStrongSignal()
+    {
+        doubleJumpButton.sprite = availableButton;
+        doubleJumpIcon.sprite = doubleJumpAvailable;
+
+        dashButton.sprite = availableButton;
+        dashIcon.sprite = strongDash;
+
+        feedbackImage.sprite = strongSignal;
     }
 }
