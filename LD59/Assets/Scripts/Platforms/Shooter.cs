@@ -25,6 +25,7 @@ public class Shooter : Platform
     {
         trashCanShoot = GetComponent<StudioEventEmitter>();
         bulletTimer = bulletInterval;
+        transform.localScale = new Vector3(1f,1f,1f);
     }
 
     private void Update()
