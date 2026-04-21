@@ -156,7 +156,7 @@ MonoBehaviour:
   canWork: 0
   pointA: {fileID: 8931403454669712600}
   pointB: {fileID: 8735623862693606989}
-  speed: 0.5
+  speed: 0.3
   isPlatform: 1
 --- !u!114 &5946899363590718667
 MonoBehaviour:
