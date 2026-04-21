@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8f6f7a39a4a9e4eb0574f90153703d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rotationSpeed: -1500
+  rotationSpeed: -500
 --- !u!1 &5133123422431564269
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.26, y: 0.26}
   m_EdgeRadius: 0
 --- !u!114 &6325068043926806118
 MonoBehaviour:
