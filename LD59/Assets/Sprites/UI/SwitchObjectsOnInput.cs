@@ -7,6 +7,11 @@ public class SwitchObjectsOnInput : MonoBehaviour
 
     private bool jaTrocou = false;
 
+    private void Start()
+    {
+        AudioManager.Instance.StopMusicMenu();
+    }
+
     void Update()
     {
        

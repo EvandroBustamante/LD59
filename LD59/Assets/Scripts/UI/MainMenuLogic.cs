@@ -18,8 +18,6 @@ public class MainMenuLogic : MonoBehaviour
 
         myButton.onClick.AddListener(StartGame);
         muteButton.onClick.AddListener(MuteGame);
-
-        StartCoroutine(StartDelay());
     }
 
     private void OnDestroy()
@@ -28,12 +26,12 @@ public class MainMenuLogic : MonoBehaviour
         muteButton.onClick.RemoveListener(MuteGame);
     }
 
-    private IEnumerator StartDelay()
-    {
-        yield return new WaitForEndOfFrame();
+    //private IEnumerator StartDelay()
+    //{
+    //    yield return new WaitForEndOfFrame();
 
-        AudioManager.Instance.StopMusicMenu();
-    }
+    //    AudioManager.Instance.StopMusicMenu();
+    //}
 
     private void StartGame()
     {
