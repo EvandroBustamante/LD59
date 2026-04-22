@@ -30,6 +30,7 @@ public class PauseButton : MonoBehaviour
         sfxSlider.onValueChanged.AddListener(OnSFXValueChanged);
         quitButton.onClick.AddListener(QuitButton);
         restartButton.onClick.AddListener(RestartGame);
+
     }
 
     private void OnDestroy()
@@ -52,7 +53,7 @@ public class PauseButton : MonoBehaviour
 
     private void OnButtonClicked()
     {
-        if (!isPaused)
+        if (!isPaused )
         {
             player.DisablePlayerControls();
             isPaused = true;

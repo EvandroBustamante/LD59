@@ -6,8 +6,18 @@ public class UIToggleTween : MonoBehaviour
     public GameObject target;
     public GameObject timerTarget;
     public RectTransform rectTransform;
+    public InputManager inputManager;
 
+    private PlayerCharacter player;
     public float duration = 0.3f;
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<PlayerCharacter>();
+        inputManager = player.GetComponent<InputManager>();
+
+        
+    }
 
     public void Toggle()
     {

@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public bool isDashing = false;
     [HideInInspector] public bool isInteracting = false;
     [HideInInspector] public bool isRestarting = false;
+    [HideInInspector] public bool isPausing = false;
 
     PlayerInputs playerInputs;
 
@@ -15,6 +16,8 @@ public class InputManager : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         playerInputs.Player.Enable();
+        playerInputs.Player.Pause.performed += OnPausePerformed;
+        playerInputs.Player.Pause.canceled += OnPauseCanceled;
         playerInputs.Player.Restart.performed += OnRestartPerformed;
         playerInputs.Player.Jump.performed += OnJumpPerformed;
         playerInputs.Player.Jump.canceled += OnJumpCanceled;
@@ -26,6 +29,8 @@ public class InputManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        playerInputs.Player.Pause.performed -= OnPausePerformed;
+        playerInputs.Player.Pause.canceled -= OnPauseCanceled;
         playerInputs.Player.Restart.performed -= OnRestartPerformed;
         playerInputs.Player.Jump.performed -= OnJumpPerformed;
         playerInputs.Player.Jump.canceled -= OnJumpCanceled;
@@ -74,5 +79,15 @@ public class InputManager : MonoBehaviour
     void OnRestartPerformed(InputAction.CallbackContext context)
     {
         isRestarting = true;
+    }
+
+    void OnPausePerformed(InputAction.CallbackContext context)
+    {
+        isPausing = true;
+    }
+
+    void OnPauseCanceled(InputAction.CallbackContext context)
+    {
+        isPausing = false;
     }
 }

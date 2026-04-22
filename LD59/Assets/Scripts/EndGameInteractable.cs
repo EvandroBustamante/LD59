@@ -19,12 +19,12 @@ public class EndGameInteractable : MonoBehaviour
 
     public void TriggerEnd()
     {
+        if (timer) timer.GetComponent<Timer>().pauseTime = true;
         StartCoroutine(EndScreen());
     }
 
     public IEnumerator EndScreen()
     {
-        if (timer) timer.GetComponent<Timer>().pauseTime = true;
         player.DisablePlayerControls();
 
         blackScreen.SetActive(true);

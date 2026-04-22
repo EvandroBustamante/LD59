@@ -22178,6 +22178,10 @@ PrefabInstance:
       value: EndGameInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 4820950696230601182, guid: 854774a3e90aa6e468b784960375ad68, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 274063411}
+    - target: {fileID: 4820950696230601182, guid: 854774a3e90aa6e468b784960375ad68, type: 3}
       propertyPath: blueScreen
       value: 
       objectReference: {fileID: 1904399995}
