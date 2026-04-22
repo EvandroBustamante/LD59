@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseButton : MonoBehaviour
 {
     public Slider musicSlider;
     public Slider sfxSlider;
     public Button quitButton;
+    public Button restartButton;
+    public GameObject timer;
+   
 
     private bool isPaused = false;
 
@@ -23,6 +27,7 @@ public class PauseButton : MonoBehaviour
         musicSlider.onValueChanged.AddListener(OnMusicValueChanged);
         sfxSlider.onValueChanged.AddListener(OnSFXValueChanged);
         quitButton.onClick.AddListener(QuitButton);
+        restartButton.onClick.AddListener(RestartGame);
     }
 
     private void OnDestroy()
@@ -31,6 +36,7 @@ public class PauseButton : MonoBehaviour
         musicSlider.onValueChanged.RemoveListener(OnMusicValueChanged);
         sfxSlider.onValueChanged.RemoveListener(OnSFXValueChanged);
         quitButton.onClick.RemoveListener(QuitButton);
+        restartButton.onClick.RemoveListener(RestartGame);
     }
 
     private void OnButtonClicked()
@@ -39,11 +45,13 @@ public class PauseButton : MonoBehaviour
         {
             player.DisablePlayerControls();
             isPaused = true;
+            if (timer) timer.GetComponent<Timer>().pauseTime = true;
         }
         else if (isPaused)
         {
             player.EnablePlayerControls();
             isPaused = false;
+            if (timer) timer.GetComponent<Timer>().pauseTime = false;
         }
     }
 
@@ -61,5 +69,11 @@ public class PauseButton : MonoBehaviour
     {
         Debug.Log("Quit game");
         Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Restarting Game");
     }
 }

@@ -4,6 +4,7 @@ using DG.Tweening;
 public class UIToggleTween : MonoBehaviour
 {
     public GameObject target;
+    public GameObject timerTarget;
     public RectTransform rectTransform;
 
     public float duration = 0.3f;
@@ -46,7 +47,10 @@ public class UIToggleTween : MonoBehaviour
                 target.SetActive(false);
             });
 
+            /*if (timerTarget) timerTarget.GetComponent<Timer>().elapsedTime = 0;*/
+
         }
+
     }
 
 }
