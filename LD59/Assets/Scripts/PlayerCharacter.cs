@@ -203,6 +203,9 @@ public class PlayerCharacter : MonoBehaviour
             animator.SetFloat("jumpVel", rb.linearVelocity.y);
         }
 
+        //Restart
+        /*if(inputManager.isRestarting) */
+
         //Move camera target:
         int facingValue = 0;
         if (isFacingRight) facingValue = 1;

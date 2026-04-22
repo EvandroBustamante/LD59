@@ -35644,6 +35644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chunk (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2824263401745744799, guid: 0203d453e9e4c634796c72015bc9baef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3364291577786644856, guid: 0203d453e9e4c634796c72015bc9baef, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.7292614
@@ -42967,6 +42971,10 @@ PrefabInstance:
     - target: {fileID: 1117214411851425520, guid: 4e4ff914bfdcc2844ba6eb726bb01017, type: 3}
       propertyPath: m_Name
       value: UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117214411851425520, guid: 4e4ff914bfdcc2844ba6eb726bb01017, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1153453585498358833, guid: 4e4ff914bfdcc2844ba6eb726bb01017, type: 3}
       propertyPath: m_AnchorMax.x

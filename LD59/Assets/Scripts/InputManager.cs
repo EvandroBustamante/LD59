@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public bool isJumping = false;
     [HideInInspector] public bool isDashing = false;
     [HideInInspector] public bool isInteracting = false;
+    [HideInInspector] public bool isRestarting = false;
 
     PlayerInputs playerInputs;
 
@@ -14,6 +15,7 @@ public class InputManager : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         playerInputs.Player.Enable();
+        playerInputs.Player.Restart.performed += OnRestartPerformed;
         playerInputs.Player.Jump.performed += OnJumpPerformed;
         playerInputs.Player.Jump.canceled += OnJumpCanceled;
         playerInputs.Player.Dash.performed += OnDashPerformed;
@@ -24,6 +26,7 @@ public class InputManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        playerInputs.Player.Restart.performed -= OnRestartPerformed;
         playerInputs.Player.Jump.performed -= OnJumpPerformed;
         playerInputs.Player.Jump.canceled -= OnJumpCanceled;
         playerInputs.Player.Dash.performed -= OnDashPerformed;
@@ -66,5 +69,10 @@ public class InputManager : MonoBehaviour
     void OnInteractCanceled(InputAction.CallbackContext context)
     {
         isInteracting = false;
+    }
+
+    void OnRestartPerformed(InputAction.CallbackContext context)
+    {
+        isRestarting = true;
     }
 }

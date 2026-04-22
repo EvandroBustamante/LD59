@@ -8,6 +8,7 @@ public class EndGameInteractable : MonoBehaviour
     public GameObject blackScreen;
     public GameObject blueScreen;
     public TextMeshProUGUI messageText;
+    public GameObject timer;
 
     private PlayerCharacter player;
 
@@ -23,6 +24,7 @@ public class EndGameInteractable : MonoBehaviour
 
     public IEnumerator EndScreen()
     {
+        if (timer) timer.GetComponent<Timer>().pauseTime = true;
         player.DisablePlayerControls();
 
         blackScreen.SetActive(true);

@@ -9,6 +9,7 @@ public class PauseButton : MonoBehaviour
     public Button quitButton;
     public Button restartButton;
     public GameObject timer;
+    private InputManager inputManager;
    
 
     private bool isPaused = false;
@@ -20,6 +21,7 @@ public class PauseButton : MonoBehaviour
     {
         myButton = GetComponent<Button>();
         player = FindAnyObjectByType<PlayerCharacter>();
+        inputManager = player.GetComponent<InputManager>();
 
         isPaused = false;
 
@@ -37,6 +39,15 @@ public class PauseButton : MonoBehaviour
         sfxSlider.onValueChanged.RemoveListener(OnSFXValueChanged);
         quitButton.onClick.RemoveListener(QuitButton);
         restartButton.onClick.RemoveListener(RestartGame);
+    }
+
+    private void Update()
+    {
+        if(inputManager.isRestarting)
+        {
+            inputManager.isRestarting = false;
+            RestartGame();
+        }
     }
 
     private void OnButtonClicked()
