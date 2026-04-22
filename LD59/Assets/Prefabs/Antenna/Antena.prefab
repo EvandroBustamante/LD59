@@ -1037,7 +1037,7 @@ MonoBehaviour:
   circleTransform: {fileID: 5199337183872339640}
   width: 0.03
   sections: 40
-  color: {r: 0.34509805, g: 0.9254902, b: 0.64705884, a: 0.5882353}
+  color: {r: 0.34509805, g: 0.9254902, b: 0.64705884, a: 0.78431374}
   rotationSpeed: -30
   colors: []
 --- !u!1 &3588883395853087142

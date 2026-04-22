@@ -16,9 +16,11 @@ public class MovingPlatform : Platform
     private bool goingA = false;
     private Transform currentTarget;
 
+    private StudioEventEmitter emitter;
 
     private void Awake()
     {
+        emitter = GetComponent<StudioEventEmitter>();
         transform.localScale = new Vector3(1f, 1f, 1f);
         StartCoroutine(DelayStart());
     }
@@ -57,11 +59,15 @@ public class MovingPlatform : Platform
 
         if (isPlatform)
         {
-            /*AudioManager.Instance.PlayMovingPlatform(gameObject);
+            emitter.EventReference = AudioManager.Instance.movingPlatform;
+            emitter.Play();
+            /*AudioManager.Instance.PlayMovingPlatform(gameObject);*/
         }
         else
         {
-            AudioManager.Instance.PlayMovingSaw(gameObject);*/
+            emitter.EventReference = AudioManager.Instance.movingSaw;
+            emitter.Play();
+           /* AudioManager.Instance.PlayMovingSaw(gameObject);*/
         }
     }
 

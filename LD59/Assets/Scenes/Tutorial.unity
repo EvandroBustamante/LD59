@@ -2574,7 +2574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183b6076a8fdd0148b9153c832f9664b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSceneInteractable
-  sceneToLoad: 2
+  sceneToLoad: 3
 --- !u!212 &892526413
 SpriteRenderer:
   serializedVersion: 2
@@ -5486,7 +5486,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1445866370, guid: 80186a0f6e333aa45b4def74ad128cd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5631,7 +5631,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -84779125
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}

@@ -62,6 +62,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        
         musicVCA = RuntimeManager.GetVCA("vca:/vca_music_fader");
         sfxVCA = RuntimeManager.GetVCA("vca:/vca_sfx_fader");
 

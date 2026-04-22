@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7558789956621699861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/ui/sfx_blue_screen_error
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/ui/sfx_blue_screen_error
+  Guid:
+    Data1: 1708140297
+    Data2: 1081593059
+    Data3: -792927325
+    Data4: 670773331
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6946182775545180814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +135,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5680006305811393917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/main_char/sfx_char_pickable_wifi
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/main_char/sfx_char_pickable_wifi
+  Guid:
+    Data1: 701697560
+    Data2: 1337971570
+    Data3: -1894732353
+    Data4: -24419551
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4838857020978378193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/main_char/sfx_char_spawn_ingame
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/main_char/sfx_char_spawn_ingame
+  Guid:
+    Data1: 1351613410
+    Data2: 1176109294
+    Data3: -1861337191
+    Data4: 1458119476
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3751293981592464012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +216,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62785
+--- !u!114 &-3370257480338057479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/scenario/sfx_trashcan_shoot_disappear
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/scenario/sfx_trashcan_shoot_disappear
+  Guid:
+    Data1: 292954446
+    Data2: 1323196730
+    Data3: -1960782924
+    Data4: -1083182640
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2553371210528236315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,10 +312,10 @@ MonoBehaviour:
   Path: FMOD/FMOD/fmod_ld59/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639122252156702284
+  lastModified: 639123115532067188
   FileSizes:
   - Name: 
-    Value: 1838
+    Value: 2198
   Exists: 1
 --- !u!114 &-450992213816742838
 MonoBehaviour:
@@ -233,8 +341,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 4
+  MaxDistance: 10
   Length: 9200
 --- !u!114 &11400000
 MonoBehaviour:
@@ -268,13 +376,20 @@ MonoBehaviour:
   - {fileID: -450992213816742838}
   - {fileID: 488556833906385563}
   - {fileID: -6946182775545180814}
+  - {fileID: -7558789956621699861}
+  - {fileID: 5250828030369431188}
+  - {fileID: -5680006305811393917}
+  - {fileID: -3370257480338057479}
+  - {fileID: 1263125246490387677}
+  - {fileID: -4838857020978378193}
+  - {fileID: 2396615757092952118}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7421581337012364605}
   StringsBanks:
   - {fileID: -781344793746188434}
   cacheVersion: 131859
-  cacheTime: 639122299878332107
+  cacheTime: 639123243986539766
   SerializableEventsDict:
   - key: event:/sfx/main_char/sfx_char_doublejump
     index: 0
@@ -335,6 +450,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 400
+--- !u!114 &1263125246490387677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/main_char/sfx_char_wifi_signal_lost
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/main_char/sfx_char_wifi_signal_lost
+  Guid:
+    Data1: 941024482
+    Data2: 1279917854
+    Data3: -29142654
+    Data4: 1317078958
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1288184028982489874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +531,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9200
+--- !u!114 &2396615757092952118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/scenario/sfx_trashcan_shoot
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/scenario/sfx_trashcan_shoot
+  Guid:
+    Data1: -1306181904
+    Data2: 1330044677
+    Data3: -102457977
+    Data4: 79973573
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2722181681352695942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +603,33 @@ MonoBehaviour:
     Data2: 1307728107
     Data3: 1864129187
     Data4: -1474385552
+  Banks:
+  - {fileID: 7421581337012364605}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5250828030369431188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/sfx/ui/sfx_ui_click_general
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/sfx/ui/sfx_ui_click_general
+  Guid:
+    Data1: -1356707566
+    Data2: 1124164769
+    Data3: -1870676338
+    Data4: -2104620556
   Banks:
   - {fileID: 7421581337012364605}
   IsStream: 0
@@ -512,7 +708,7 @@ MonoBehaviour:
   Path: FMOD/FMOD/fmod_ld59/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639122299878332107
+  lastModified: 639123243986539766
   FileSizes: []
   Exists: 1
 --- !u!114 &8373622405546791441
@@ -536,7 +732,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 7421581337012364605}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
