@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 8291471085601660184}
   - component: {fileID: 4061600595806820782}
   - component: {fileID: 1778397632159939055}
-  - component: {fileID: 2059085456028686641}
   - component: {fileID: 8805045661141401340}
   m_Layer: 0
   m_Name: Player
@@ -123,7 +122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 348327129
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7408791951343775973, guid: 8c90e6b77fa1a5a43a80d9d5be43841d, type: 3}
@@ -340,20 +339,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2059085456028686641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2247313780520433978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e87f8556191a054a9bf20587531b131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShadowTrail
-  lifetime: 0.15
-  _color: {r: 0, g: 0.28235295, b: 0.6862745, a: 1}
 --- !u!114 &8805045661141401340
 MonoBehaviour:
   m_ObjectHideFlags: 0
